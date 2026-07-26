@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    color: #52606D;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif;
+    color: #1F2937;
+  }
+  
+  :focus-visible {
+    outline: 2px solid #D62828;
+    outline-offset: 3px;
+  }
+}
+
+/* Red Medical Theme Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 214, 217, 0.6);
+}
+
+.glass-red {
+  background: rgba(164, 22, 26, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Keyframe Animations */
+@keyframes ring {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50%, 70% { transform: rotate(12deg); }
+  20%, 40%, 60% { transform: rotate(-12deg); }
+  80% { transform: rotate(0deg); }
+}
+
+@keyframes slowPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ecgMove {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-ring {
+  animation: ring 5s infinite ease-in-out;
+}
+
+.animate-slow-pulse {
+  animation: slowPulse 4s infinite ease-in-out;
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+/* Custom Red Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF1F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D62828;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A4161A;
+}
+
+/* Accessibility: Reduced Motion Overrides */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

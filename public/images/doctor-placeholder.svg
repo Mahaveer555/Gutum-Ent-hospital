@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="docBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAF9FA" />
+      <stop offset="100%" stop-color="#D5F3F5" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="700" fill="url(#docBg)" rx="24" />
+  
+  <!-- Silhouette for doctor profile placeholder -->
+  <g transform="translate(150, 120)">
+    <circle cx="150" cy="140" r="100" fill="#0B3C5D" opacity="0.85"/>
+    <path d="M 10 420 C 10 290, 80 260, 150 260 C 220 260, 290 290, 290 420 Z" fill="#0B3C5D" opacity="0.85"/>
+    <!-- Medical Stethoscope -->
+    <path d="M 80 270 C 80 340, 220 340, 220 270" stroke="#087F8C" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <circle cx="150" cy="355" r="22" fill="#F26B5B"/>
+    <circle cx="150" cy="355" r="10" fill="#FFFFFF"/>
+  </g>
+  
+  <rect x="40" y="580" width="520" height="80" rx="16" fill="#0B3C5D" />
+  <text x="300" y="618" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ENT Specialist Profile</text>
+  <text x="300" y="642" font-family="Inter, sans-serif" font-size="13" fill="#D5F3F5" text-anchor="middle">Details will be updated after clinic verification</text>
+</svg>

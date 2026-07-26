@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-pediatric-ent.svg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#087F8C" />
+      <stop offset="100%" stop-color="#20A779" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#grad-pediatric-ent.svg)" rx="20" />
+  
+  <circle cx="500" cy="80" r="120" fill="#FFFFFF" fill-opacity="0.06" />
+  <circle cx="100" cy="320" r="100" fill="#FFFFFF" fill-opacity="0.06" />
+  
+  <g transform="translate(250, 120)" fill="none" stroke="#EAF9FA" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="50" cy="50" r="50" fill="#FFFFFF" fill-opacity="0.1" stroke="#20A779" stroke-width="4"/>
+    <path d="M 30 50 L 50 70 L 85 35" stroke="#F26B5B" stroke-width="6"/>
+  </g>
+
+  <!-- Overlay Text Card -->
+  <rect x="30" y="290" width="540" height="80" rx="14" fill="#0B3C5D" fill-opacity="0.9" stroke="#EAF9FA" stroke-opacity="0.15" />
+  <text x="50" y="328" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">Child-Friendly Pediatric ENT</text>
+  <text x="50" y="352" font-family="Inter, sans-serif" font-size="13" fill="#D5F3F5">Gautam ENT Clinic • Kota, Rajasthan</text>
+</svg>
