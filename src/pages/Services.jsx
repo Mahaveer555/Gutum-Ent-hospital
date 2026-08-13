@@ -22,12 +22,12 @@ export const Services = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const catParam = params.get('category');
-    if (catParam && ['Ear', 'Nose', 'Throat', 'Pediatric', 'Other'].includes(catParam)) {
+    if (catParam && ['Ear', 'Nose', 'Throat', 'Other'].includes(catParam)) {
       setSelectedCategory(catParam);
     }
   }, [location.search]);
 
-  const categories = ['All Services', 'Ear', 'Nose', 'Throat', 'Pediatric', 'Other'];
+  const categories = ['All Services', 'Ear', 'Nose', 'Throat', 'Other'];
 
   const filteredServices =
     selectedCategory === 'All Services' || selectedCategory === 'All'
@@ -48,15 +48,28 @@ export const Services = () => {
 
       <div className="space-y-12 pb-16">
         {/* Hero Banner */}
-        <section className="bg-gradient-to-r from-medicalred-dark via-medicalred to-medicalred-dark text-white py-14 md:py-20 relative overflow-hidden">
+        <section className="bg-gradient-to-r from-[#102A43] via-[#102A43]/90 to-[#8F1020] text-white py-10 md:py-16 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <Breadcrumb current="Services" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
-              Specialized ENT Services &amp; Consultations
-            </h1>
-            <p className="mt-3 text-base md:text-lg text-rose-100 max-w-2xl font-normal leading-relaxed">
-              Explore our clinical consultation offerings for ear, nose, throat, voice, and pediatric otolaryngology concerns in Kota.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <Breadcrumb current="Services" />
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight mt-2">
+                  Specialized ENT Services &amp; Consultations
+                </h1>
+                <p className="mt-3 text-base md:text-lg text-rose-100 max-w-2xl font-normal leading-relaxed">
+                  Explore our clinical consultation offerings for ear, nose, throat, voice, and pediatric otolaryngology concerns in Kota.
+                </p>
+              </div>
+              <div className="lg:col-span-4 hidden lg:block">
+                <div className="bg-white/10 p-2 rounded-2xl border border-white/20 backdrop-blur-sm shadow-lg max-w-[280px] mx-auto overflow-hidden">
+                  <img
+                    src="/images/clinic/ent_diagram.webp"
+                    alt="Ear, Nose, and Throat Core Diagnosis"
+                    className="w-full h-auto rounded-xl object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

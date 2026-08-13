@@ -85,6 +85,26 @@
   background: #A4161A;
 }
 
+/* Swiper Custom Pagination Bullets */
+.hero-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-block;
+  margin: 0 4px;
+}
+.hero-bullet:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+.hero-bullet-active {
+  width: 24px !important;
+  border-radius: 4px !important;
+  background: #C92032 !important;
+}
+
 /* Accessibility: Reduced Motion Overrides */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

@@ -6,7 +6,6 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { BottomMobileActionBar } from './components/BottomMobileActionBar';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
-import { BackToTopButton } from './components/BackToTopButton';
 import { ScrollToTop } from './components/ScrollToTop';
 import { PageLoader } from './components/PageLoader';
 import { PageTransition } from './components/PageTransition';
@@ -55,7 +54,6 @@ export function App() {
       {/* Floating & Mobile Action Bars */}
       <BottomMobileActionBar />
       <FloatingWhatsAppButton />
-      <BackToTopButton />
     </div>
   );
 }

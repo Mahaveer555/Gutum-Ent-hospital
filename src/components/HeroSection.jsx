@@ -1,192 +1,260 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, ArrowRight, CheckCircle2, Ear, Activity, HeartPulse, Plus } from 'lucide-react';
-import { clinicData } from '../data/clinic';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Phone, ArrowRight, Calendar, Navigation as MapIcon, ChevronRight } from 'lucide-react';
+import { clinicData, getWhatsAppUrl } from '../data/clinic';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const HeroSection = () => {
-  const trustPoints = [
-    'Ear, Nose and Throat Care',
-    'Adult and Child ENT Concerns',
-    'Convenient Kota Location',
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const slides = [
+    {
+      background: '/images/clinic/clinic_exterior_primary.webp',
+      objectPosition: 'object-top',
+      label: 'WELCOME TO GAUTAM EAR NOSE THROAT CLINIC',
+      headingLines: ['Advanced Care for', 'Ear, Nose & Throat'],
+      description: 'Expert ENT consultation, modern examination facilities and compassionate treatment by Dr. Pragyanand Gautam.',
+      cta: [
+        { text: 'Book Appointment', href: getWhatsAppUrl(), primary: true, isExternal: true },
+        { text: 'Call Now', href: `tel:${clinicData.rawPhone}`, primary: false, isExternal: false }
+      ]
+    },
+    {
+      background: '/images/clinic/clinic_exterior_primary.webp',
+      objectPosition: 'object-top',
+      label: 'SPECIALIZED ENT CARE',
+      headingLines: ['Your Hearing and', 'Breathing Health Matters'],
+      description: 'Comprehensive diagnosis and treatment for common and complex ENT conditions.',
+      cta: [
+        { text: 'Explore Services', to: '/services', primary: true, isLink: true },
+        { text: 'Get Directions', href: clinicData.directionsUrl, primary: false, isExternal: true }
+      ]
+    },
+    {
+      background: '/images/clinic/ent_microscope.webp',
+      objectPosition: 'object-center',
+      label: 'MODERN DIAGNOSTIC FACILITIES',
+      headingLines: ['Accurate Diagnosis', 'with Advanced Equipment'],
+      description: 'Modern ENT examination equipment for reliable diagnosis and personalized care.',
+      cta: [
+        { text: 'View Facilities', to: '/gallery?category=Equipment', primary: true, isLink: true },
+        { text: 'Call Clinic', href: `tel:${clinicData.rawPhone}`, primary: false, isExternal: false }
+      ]
+    }
   ];
 
+  // Framer Motion Animation Variants
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const labelVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.7, ease: [0.215, 0.61, 0.355, 1] } 
+    }
+  };
+
+  const lineVariants = {
+    hidden: { y: '100%', opacity: 0 },
+    show: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { duration: 0.85, ease: [0.33, 1, 0.68, 1] } 
+    }
+  };
+
+  const descVariants = {
+    hidden: { opacity: 0, y: 15 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.75, ease: 'easeOut' } 
+    }
+  };
+
+  const btnVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    show: { 
+      opacity: 1, 
+      scale: 1, 
+      transition: { duration: 0.6, ease: 'easeOut' } 
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-rose-50/50 to-rosebg py-12 md:py-20 border-b border-roseborder/40">
-      
-      {/* Background Subtle ECG & Red Medical Cross Accents */}
-      <div className="absolute inset-0 opacity-15 pointer-events-none">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <pattern id="medicalGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#D62828" strokeWidth="0.8" opacity="0.3" />
-            <circle cx="30" cy="30" r="1.5" fill="#D62828" opacity="0.4" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#medicalGrid)" />
+    <section className="relative w-full h-[75vh] md:h-[85vh] bg-[#102A43] overflow-hidden">
+      <Swiper
+        modules={[Autoplay, EffectFade, Navigation, Pagination]}
+        effect="fade"
+        speed={1000}
+        autoplay={{
+          delay: 5500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }}
+        loop={true}
+        navigation={{
+          nextEl: '.swiper-button-next-custom',
+          prevEl: '.swiper-button-prev-custom'
+        }}
+        pagination={{
+          clickable: true,
+          el: '.swiper-pagination-custom',
+          bulletClass: 'hero-bullet',
+          bulletActiveClass: 'hero-bullet-active'
+        }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        className="w-full h-full"
+      >
+        {slides.map((slide, slideIdx) => {
+          const isActive = activeIndex === slideIdx;
+
+          return (
+            <SwiperSlide key={slideIdx} className="relative w-full h-full">
+              {/* Background Image Container with Zoom effect on Active */}
+              <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <motion.img
+                  src={slide.background}
+                  alt={slide.label}
+                  initial={{ scale: 1 }}
+                  animate={isActive ? { scale: 1.06 } : { scale: 1 }}
+                  transition={{ duration: 6, ease: 'easeOut' }}
+                  className={`w-full h-full object-cover select-none ${slide.objectPosition || 'object-center'}`}
+                  priority={slideIdx === 0 ? "true" : "false"}
+                />
+                {/* Visual Overlay: Light Gradient from Left to Right for Text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none" />
+              </div>
+
+              {/* Slide Content Container */}
+              <div className="absolute inset-0 flex items-center z-10">
+                <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+                  <div className="max-w-3xl">
+                    <motion.div
+                      variants={containerVariants}
+                      initial="hidden"
+                      animate={isActive ? "show" : "hidden"}
+                      className="space-y-5 md:space-y-6"
+                    >
+                      {/* Small badge/label */}
+                      <motion.div variants={labelVariants} className="inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#C92032] animate-pulse" />
+                        <span className="text-xs md:text-sm font-extrabold tracking-widest text-[#F7FAFC] uppercase bg-[#C92032]/20 border border-[#C92032]/30 px-3.5 py-1.5 rounded-full backdrop-blur-sm">
+                          {slide.label}
+                        </span>
+                      </motion.div>
+
+                      {/* Main Heading reveals line-by-line */}
+                      <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-[1.12]">
+                        {slide.headingLines.map((line, idx) => (
+                          <span key={idx} className="block overflow-hidden py-0.5">
+                            <motion.span
+                              variants={lineVariants}
+                              className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-200"
+                            >
+                              {line}
+                            </motion.span>
+                          </span>
+                        ))}
+                      </h1>
+
+                      {/* Description */}
+                      <motion.p
+                        variants={descVariants}
+                        className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl"
+                      >
+                        {slide.description}
+                      </motion.p>
+
+                      {/* CTA Buttons */}
+                      <motion.div
+                        variants={btnVariants}
+                        className="flex flex-wrap items-center gap-4 pt-2"
+                      >
+                        {slide.cta.map((btn, btnIdx) => {
+                          const ButtonIcon = btn.primary ? Calendar : Phone;
+                          const classes = btn.primary
+                            ? "inline-flex items-center gap-2 bg-[#C92032] hover:bg-[#8F1020] text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-red-btn transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 group"
+                            : "inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-white/20 hover:border-white/40 shadow-sm transition-all duration-300 backdrop-blur-sm";
+
+                          if (btn.isLink) {
+                            return (
+                              <Link key={btnIdx} to={btn.to} className={classes}>
+                                <span>{btn.text}</span>
+                                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              </Link>
+                            );
+                          }
+
+                          return (
+                            <a
+                              key={btnIdx}
+                              href={btn.href}
+                              target={btn.isExternal ? "_blank" : undefined}
+                              rel={btn.isExternal ? "noopener noreferrer" : undefined}
+                              className={classes}
+                            >
+                              {btn.primary ? (
+                                <>
+                                  <ButtonIcon className="w-4 h-4" />
+                                  <span>{btn.text}</span>
+                                </>
+                              ) : (
+                                <>
+                                  <span>{btn.text}</span>
+                                </>
+                              )}
+                            </a>
+                          );
+                        })}
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+
+      {/* Navigation Custom Arrows */}
+      <button 
+        className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/10 hover:border-white/30 bg-black/20 hover:bg-black/40 text-white flex items-center justify-center transition-all opacity-0 md:opacity-100 hover:scale-105"
+        aria-label="Previous Slide"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
-      </div>
+      </button>
 
-      {/* Floating Low-Opacity Medical Cross Background Badges */}
-      <div className="absolute top-10 right-10 text-medicalred/5 pointer-events-none animate-rotate-slow">
-        <Plus className="w-48 h-48 stroke-[1.5]" />
-      </div>
-      <div className="absolute bottom-10 left-6 text-medicalred/5 pointer-events-none">
-        <Plus className="w-36 h-36 stroke-[1.5]" />
-      </div>
+      <button 
+        className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/10 hover:border-white/30 bg-black/20 hover:bg-black/40 text-white flex items-center justify-center transition-all opacity-0 md:opacity-100 hover:scale-105"
+        aria-label="Next Slide"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Hero Content */}
-          <motion.div
-            className="lg:col-span-7 space-y-6"
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            {/* Red Pill Label */}
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rosebg border border-roseborder shadow-sm"
-            >
-              <span className="w-2.5 h-2.5 rounded-full bg-medicalred animate-pulse" />
-              <span className="text-xs md:text-sm font-extrabold text-medicalred tracking-wide uppercase">
-                Specialized Ear, Nose &amp; Throat Care in Kota
-              </span>
-            </motion.div>
-
-            {/* Main Heading with Red Highlights */}
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-darkheading tracking-tight leading-[1.15]"
-            >
-              Complete ENT Care for <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-medicalred to-medicalred-dark">
-                Better Hearing
-              </span>
-              , Breathing and Speaking
-            </motion.h1>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-base sm:text-lg text-bodytext leading-relaxed font-normal max-w-2xl"
-            >
-              Gautam ENT Clinic provides patient-focused consultation for common ear, nose and throat concerns in Kota. Contact the clinic for professional evaluation and personalized medical guidance.
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2"
-            >
-              <a
-                href={`tel:${clinicData.rawPhone}`}
-                className="inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-medicalred via-medicalred to-medicalred-dark hover:from-medicalred-dark hover:to-medicalred-900 text-white font-bold text-base px-7 py-3.5 rounded-xl shadow-red-btn hover:shadow-lg transition-all transform hover:-translate-y-0.5 group"
-              >
-                <Phone className="w-5 h-5 animate-ring" />
-                <span>Call for Appointment</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </a>
-
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-rosebg text-medicalred font-bold text-base px-6 py-3.5 rounded-xl border-2 border-medicalred/40 hover:border-medicalred shadow-sm transition-all"
-              >
-                <span>Explore Services</span>
-              </Link>
-            </motion.div>
-
-            {/* Trust Points */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="pt-4 border-t border-roseborder/60 grid grid-cols-1 sm:grid-cols-3 gap-3"
-            >
-              {trustPoints.map((point, index) => (
-                <div key={index} className="flex items-center gap-2 text-xs md:text-sm font-semibold text-darkheading">
-                  <CheckCircle2 className="w-4 h-4 text-successgreen flex-shrink-0" />
-                  <span>{point}</span>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Right Visual Image with Red Frame & Floating Cards */}
-          <motion.div
-            className="lg:col-span-5 relative"
-            initial={{ opacity: 0, x: 25 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            {/* Soft Red Radial Glow behind image */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-rose-200/40 to-medicalred/20 rounded-3xl blur-2xl pointer-events-none" />
-
-            <div className="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-hospital-lg border-4 border-white bg-white">
-              <img
-                src="/images/hero-ent.png"
-                alt="ENT Specialist consultation at Gautam ENT Clinic Kota"
-                className="w-full h-auto object-cover rounded-xl"
-                width="800"
-                height="600"
-              />
-
-              {/* Floating Card 1: Ear Care */}
-              <motion.div
-                className="absolute top-6 left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-md border border-roseborder flex items-center gap-3"
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <div className="w-9 h-9 rounded-lg bg-rosebg text-medicalred flex items-center justify-center">
-                  <Ear className="w-5 h-5 animate-slow-pulse" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-darkheading">Ear Care</h4>
-                  <p className="text-[11px] text-bodytext">Infections &amp; Hearing</p>
-                </div>
-              </motion.div>
-
-              {/* Floating Card 2: Sinus Care */}
-              <motion.div
-                className="absolute bottom-20 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-md border border-roseborder flex items-center gap-3"
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              >
-                <div className="w-9 h-9 rounded-lg bg-rosebg text-medicalred flex items-center justify-center">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-darkheading">Sinus Care</h4>
-                  <p className="text-[11px] text-bodytext">Allergy &amp; Congestion</p>
-                </div>
-              </motion.div>
-
-              {/* Floating Card 3: Throat Care */}
-              <motion.div
-                className="absolute bottom-4 left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-md border border-roseborder flex items-center gap-3"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              >
-                <div className="w-9 h-9 rounded-lg bg-rosebg text-medicalred flex items-center justify-center">
-                  <HeartPulse className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-darkheading">Throat Care</h4>
-                  <p className="text-[11px] text-bodytext">Tonsils &amp; Voice</p>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+      {/* Custom Pagination Indicator Strip */}
+      <div className="swiper-pagination-custom absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
     </section>
   );
 };

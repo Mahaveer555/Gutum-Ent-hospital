@@ -16,17 +16,17 @@ export const Footer = () => {
                 <Plus className="w-6 h-6 stroke-[3]" />
               </div>
               <div>
-                <span className="font-heading font-extrabold text-xl text-white tracking-tight block">
-                  Gautam <span className="text-medicalred-bright">ENT Clinic</span>
+                <span className="font-heading font-extrabold text-lg text-white tracking-tight block animate-slow-pulse">
+                  Gautam <span className="text-medicalred-bright">Ear Nose Throat Clinic</span>
                 </span>
                 <span className="text-xs text-slate-400 font-medium block -mt-1 tracking-wider uppercase">
-                  Otolaryngology • Kota
+                  Shrinathpuram-A • Kota
                 </span>
               </div>
             </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed font-normal">
-              Gautam ENT Clinic is an ear, nose and throat clinic located in Shreenath Puram, Kota. The clinic aims to provide clear consultation guidance and patient-focused evaluation for common ENT concerns affecting adults and children.
+              Gautam Ear Nose Throat Clinic is a specialized ear, nose, and throat clinic located in Shrinathpuram-A, Kota. The clinic provides clear consultation guidance and patient-focused evaluations.
             </p>
 
             <div className="pt-2 text-xs text-rose-300 font-medium flex items-center gap-1.5">
@@ -56,11 +56,11 @@ export const Footer = () => {
               Popular Services
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
-              <li><Link to="/services#ear-infection" className="hover:text-rose-300 transition-colors">Ear Infection &amp; Pain</Link></li>
+              <li><Link to="/services#ear-infection" className="hover:text-rose-300 transition-colors">Ear Infection Treatment</Link></li>
               <li><Link to="/services#hearing-loss" className="hover:text-rose-300 transition-colors">Hearing Loss Evaluation</Link></li>
-              <li><Link to="/services#sinusitis" className="hover:text-rose-300 transition-colors">Sinusitis &amp; Nasal Allergy</Link></li>
-              <li><Link to="/services#throat-tonsil" className="hover:text-rose-300 transition-colors">Throat &amp; Tonsil Care</Link></li>
-              <li><Link to="/services#pediatric-ent" className="hover:text-rose-300 transition-colors">Pediatric ENT Care</Link></li>
+              <li><Link to="/services#sinusitis" className="hover:text-rose-300 transition-colors">Sinusitis Treatment</Link></li>
+              <li><Link to="/services#tonsillitis" className="hover:text-rose-300 transition-colors">Tonsillitis Treatment</Link></li>
+              <li><Link to="/services#general-consultation" className="hover:text-rose-300 transition-colors">General ENT Consultation</Link></li>
             </ul>
           </div>
 
@@ -118,12 +118,16 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} Gautam ENT Clinic, Kota, Rajasthan. All Rights Reserved.</p>
-          <div className="flex items-center gap-4">
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+          <p>© {new Date().getFullYear()} Gautam Ear Nose Throat Clinic, Kota, Rajasthan. All Rights Reserved.</p>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
             <Link to="/privacy" className="hover:text-rose-300 transition-colors">
               Privacy Policy
             </Link>
+            <span className="text-slate-600 hidden sm:inline">|</span>
+            <p className="text-slate-400 font-medium">
+              Designed &amp; Developed by <span className="text-rose-300 font-bold hover:text-white transition-colors cursor-pointer">Digitee World</span>
+            </p>
           </div>
         </div>
       </div>
