@@ -126,7 +126,15 @@ export const Footer = () => {
             </Link>
             <span className="text-slate-600 hidden sm:inline">|</span>
             <p className="text-slate-400 font-medium">
-              Designed &amp; Developed by <span className="text-rose-300 font-bold hover:text-white transition-colors cursor-pointer">Digitee World</span>
+              Designed &amp; Developed by{' '}
+              <a
+                href="https://digiteeworld.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rose-300 font-bold hover:text-white transition-colors"
+              >
+                Digitee World
+              </a>
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ const ClinicContext = createContext();
 
 export const ClinicProvider = ({ children }) => {
   const [clinicData, setClinicData] = useState(DEFAULT_CLINIC_DATA);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const fetchSettings = async () => {
     try {

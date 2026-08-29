@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Stethoscope, Phone, AlertCircle } from 'lucide-react';
-import { clinicData } from '../data/clinic';
+import { ArrowUpRight, CheckCircle2, MapPin, MessageCircle, Phone, Stethoscope } from 'lucide-react';
+import { clinicData, getWhatsAppUrl } from '../data/clinic';
 
 export const DoctorCard = ({ doctor }) => {
   const focusAreas = doctor?.areasOfFocus || doctor?.areasOfConsultation || [
@@ -13,94 +13,47 @@ export const DoctorCard = ({ doctor }) => {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
+    <motion.section
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-white rounded-card p-6 md:p-8 shadow-hospital border border-roseborder border-l-4 border-l-medicalred hover:shadow-hospital-lg transition-all duration-300 max-w-4xl mx-auto"
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.65 }}
+      className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,48,57,0.12)]"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-
-        {/* Doctor Photo Container */}
-        <div className="md:col-span-5 relative">
-          <div className="absolute -inset-2 bg-gradient-to-r from-medicalred/20 to-rose-200/40 rounded-2xl blur-lg pointer-events-none" />
-
-          <div className="relative rounded-2xl overflow-hidden shadow-md bg-rosebg aspect-[4/5]">
-            <img
-              src={doctor?.image || '/images/doctor-placeholder.svg'}
-              alt={`${doctor?.name || 'ENT Specialist'} - Gautam ENT Clinic Kota`}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-            {(!doctor?.verified || doctor?.unverifiedNotice) && (
-              <div className="absolute bottom-0 inset-x-0 bg-darkheading/85 backdrop-blur-md text-white text-[11px] font-medium p-2 text-center">
-                Doctor information will be updated after clinic verification
-              </div>
-            )}
+      <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="relative min-h-[420px] overflow-hidden bg-[#0a3038] p-6 sm:p-8">
+          <img src="/images/clinic/examination_room.webp" alt="ENT examination room at Gautam ENT Clinic" className="absolute inset-0 h-full w-full object-cover opacity-75" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#071f26] via-[#082c34]/65 to-[#082c34]/20" />
+          <div className="relative flex h-full flex-col justify-between">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md"><Stethoscope className="h-3.5 w-3.5 text-[#86ddd0]" />Gautam ENT Clinic</span>
+            <div>
+              <p className="mb-3 max-w-xs text-sm leading-relaxed text-slate-200">A calm, well-equipped setting for thoughtful ENT consultations in Kota.</p>
+              <div className="border-t border-white/20 pt-4 text-white"><p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9eddd3]">Clinic location</p><p className="mt-1 text-sm font-semibold">58, Shrinathpuram-A, Kota</p></div>
+            </div>
           </div>
         </div>
 
-        {/* Doctor Info Details */}
-        <div className="md:col-span-7 space-y-4">
-          <div>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-medicalred bg-rosebg border border-roseborder">
-              <Stethoscope className="w-3.5 h-3.5" />
-              {doctor?.specialty || doctor?.designation || 'ENT Specialist'}
-            </span>
-
-            <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-darkheading mt-2">
-              {doctor?.name || 'Doctor details to be updated'}
-            </h3>
-
-            <p className="text-sm font-semibold text-bodytext mt-1">
-              {doctor?.qualification || 'Will be updated after clinic verification'}
-            </p>
-          </div>
-
-          <p className="text-sm text-bodytext leading-relaxed font-normal">
-            {doctor?.description || doctor?.aboutText || 'Complete doctor profile, qualifications and consultation information will be added after verification from the clinic.'}
-          </p>
-
-          {/* Area of Focus Chips */}
-          <div>
-            <h4 className="text-xs font-bold text-darkheading uppercase tracking-wider mb-2">
-              Areas of Focus:
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {focusAreas.map((focus, idx) => (
-                <span
-                  key={idx}
-                  className="text-xs font-semibold text-medicalred-dark bg-rosebg px-3 py-1.5 rounded-lg border border-roseborder"
-                >
-                  {focus}
-                </span>
-              ))}
+        <div className="p-7 sm:p-10 lg:p-12">
+          <div className="mb-6 flex flex-wrap items-center gap-3"><span className="inline-flex items-center gap-2 rounded-full bg-[#e5f6f3] px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#087b70]">Doctor spotlight</span><span className="h-px w-10 bg-[#b9d9d4]" /><span className="text-xs font-semibold text-slate-500">Specialist ENT consultation</span></div>
+          <h2 className="max-w-xl font-heading text-3xl font-extrabold tracking-tight text-[#102a43] sm:text-4xl">Dr. Pragyanand Gautam</h2>
+          <p className="mt-2 text-sm font-bold text-[#087b70]">MBBS, M.S. (ENT)</p>
+          <p className="mt-6 max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-base">Dedicated ear, nose and throat consultation with a clear, patient-first approach. Every visit is focused on understanding symptoms, careful clinical evaluation and practical next steps.</p>
+          <div className="mt-8 rounded-2xl border border-slate-200 bg-[#f7fbfa] p-5 sm:p-6">
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.13em] text-[#174a56]">Key areas of ENT consultation</p>
+            <div className="grid gap-x-5 gap-y-3 sm:grid-cols-2">
+              {focusAreas.map((focus) => <div key={focus} className="flex items-start gap-2.5 text-sm font-medium leading-5 text-slate-600"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#16a58c]" /><span>{focus}</span></div>)}
             </div>
           </div>
-
-          {/* Unverified Verification Alert */}
-          {(!doctor?.verified || doctor?.unverifiedNotice) && (
-            <div className="bg-amber-50 p-3 rounded-xl border border-amber-200 flex items-start gap-2.5 text-xs text-amber-800">
-              <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-              <span>
-                Doctor details, qualifications, experience and exact clinic timings are pending verification. Please call the clinic desk to confirm today's availability.
-              </span>
-            </div>
-          )}
-
-          {/* CTA */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-            <a
-              href={`tel:${clinicData.rawPhone}`}
-              className="w-full sm:w-auto bg-gradient-to-r from-medicalred to-medicalred-dark hover:from-medicalred-dark hover:to-medicalred-900 text-white font-bold text-xs md:text-sm px-6 py-3 rounded-xl shadow-red-btn transition-all inline-flex items-center justify-center gap-2"
-            >
-              <Phone className="w-4 h-4 animate-ring" />
-              <span>Call Clinic ({clinicData.phone})</span>
-            </a>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href={getWhatsAppUrl('Hello Gautam ENT Clinic, I would like to book an appointment.')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0b8b78] px-5 py-3.5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(11,139,120,0.22)] transition hover:-translate-y-0.5 hover:bg-[#087568]"><MessageCircle className="h-4 w-4" />Book on WhatsApp<ArrowUpRight className="h-4 w-4" /></a>
+            <a href={`tel:${clinicData.rawPhone}`} className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#102a43] px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#163c5d]"><Phone className="h-4 w-4" />Call {clinicData.phone}</a>
+            <a href={clinicData.directionsUrl} target="_blank" rel="noopener noreferrer" aria-label="Get directions to Gautam ENT Clinic" className="inline-flex items-center justify-center rounded-xl border border-slate-200 px-4 text-[#174a56] transition hover:border-[#64b9ab] hover:bg-[#f4fbf9]"><MapPin className="h-5 w-5" /></a>
           </div>
+          <p className="mt-4 text-xs font-medium text-slate-400">Please call to confirm today’s consultation availability.</p>
         </div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 };
+
+export default DoctorCard;

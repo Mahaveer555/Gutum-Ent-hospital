@@ -10,8 +10,9 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { PageLoader } from './components/PageLoader';
 import { PageTransition } from './components/PageTransition';
 
+import { Home } from './pages/Home';
+
 // Route-based lazy loading for optimal performance
-const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })));
 const Services = lazy(() => import('./pages/Services').then((m) => ({ default: m.Services })));
 const Doctors = lazy(() => import('./pages/Doctors').then((m) => ({ default: m.Doctors })));

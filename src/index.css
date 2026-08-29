@@ -5,17 +5,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
-    color: #52606D;
+    font-family: 'Manrope', sans-serif;
+    color: #334E68;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif;
-    color: #1F2937;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #102A43;
   }
   
   :focus-visible {
-    outline: 2px solid #D62828;
+    outline: 2px solid #C92032;
     outline-offset: 3px;
   }
 }
@@ -75,14 +75,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFF1F2;
+  background: #F3F7FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D62828;
+  background: #C92032;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A4161A;
+  background: #8F1020;
 }
 
 /* Swiper Custom Pagination Bullets */
