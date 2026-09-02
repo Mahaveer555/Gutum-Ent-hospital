@@ -13,7 +13,7 @@ export const DoctorProfile = () => {
     experienceYears: 12,
     bio: "Dr. Pragyanand Gautam is an experienced Ear, Nose, and Throat (ENT) specialist in Kota. He provides expert medical consultations and specialized diagnostic evaluations for all common and complex ear, nose, and throat concerns with a patient-friendly and compassionate approach.",
     languages: ["English", "Hindi"],
-    image: "/images/doctor-portrait.png",
+    image: "/images/dr-pragyanand-gautam.png",
     verified: true
   };
 
@@ -25,7 +25,7 @@ export const DoctorProfile = () => {
         <div className="md:col-span-4 flex flex-col items-center text-center">
           <div className="relative w-52 h-64 md:w-60 md:h-76 rounded-2xl overflow-hidden shadow-lg border-4 border-medicalnavy p-1 ring-4 ring-medicalred ring-offset-2 ring-offset-white bg-softblue">
             <img
-              src="/images/doctor-portrait.png"
+              src="/images/dr-pragyanand-gautam.png"
               alt={`${doc.name || 'Dr. Pragyanand Gautam'} - ENT Specialist Kota`}
               className="w-full h-full object-cover object-top rounded-xl"
               loading="lazy"

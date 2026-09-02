@@ -159,7 +159,7 @@ export const Home = () => {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-slate-100 bg-slate-900 aspect-[3/4] sm:h-[480px]">
                 <img
-                  src="/images/doctor-portrait.png"
+                  src="/images/dr-pragyanand-gautam.png"
                   alt="Dr. Pragyanand Gautam - ENT Specialist Kota"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"

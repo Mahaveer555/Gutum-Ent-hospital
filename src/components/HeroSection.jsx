@@ -127,7 +127,7 @@ export const HeroSection = () => {
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-cyan-400/80 flex-shrink-0 bg-slate-700">
                       <img 
-                        src="/images/doctor-portrait.png" 
+                        src="/images/dr-pragyanand-gautam.png" 
                         alt="Dr. Pragyanand Gautam" 
                         className="w-full h-full object-cover object-top"
                       />

@@ -28,7 +28,7 @@ export const DEFAULT_CLINIC_DATA = {
     experienceYears: 12,
     bio: "Dr. Pragyanand Gautam is an experienced Ear, Nose, and Throat (ENT) specialist in Kota. He provides expert medical consultations and specialized diagnostic evaluations for all common and complex ear, nose, and throat concerns with a patient-friendly and compassionate approach.",
     languages: ["English", "Hindi"],
-    image: "/images/doctor-portrait.png",
+    image: "/images/dr-pragyanand-gautam.png",
     verified: true
   },
   emergencyWarning: "This website does not provide emergency medical care. For breathing difficulty, severe bleeding, sudden hearing loss, serious injury or another urgent condition, contact local emergency services or visit the nearest hospital immediately."
