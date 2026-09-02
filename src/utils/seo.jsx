@@ -4,7 +4,7 @@ import { clinicData } from '../data/clinic';
 import { doctorsData } from '../data/doctors';
 
 export const SEOHead = ({
-  title = "Gautam Ear Nose Throat Clinic Kota | ENT Specialist Doctor",
+  title = "Gautam ENT Clinic | Best ENT Clinic in Kota",
   description = "Contact Gautam Ear Nose Throat Clinic in Shrinathpuram-A, Kota for consultation regarding ear, nose and throat concerns. Call +91 70145 61171.",
   canonical = "https://gautamentclinic.com/",
   faqItems = [],

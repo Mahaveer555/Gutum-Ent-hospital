@@ -23,11 +23,11 @@ export const DoctorProfile = () => {
         
         {/* Doctor Photo Column with double-frame */}
         <div className="md:col-span-4 flex flex-col items-center text-center">
-          <div className="relative w-48 h-56 md:w-56 md:h-64 rounded-2xl overflow-hidden shadow-lg border-4 border-medicalnavy p-1 ring-4 ring-medicalred ring-offset-2 ring-offset-white bg-softblue">
+          <div className="relative w-52 h-64 md:w-60 md:h-76 rounded-2xl overflow-hidden shadow-lg border-4 border-medicalnavy p-1 ring-4 ring-medicalred ring-offset-2 ring-offset-white bg-softblue">
             <img
               src="/images/doctor-portrait.png"
               alt={`${doc.name || 'Dr. Pragyanand Gautam'} - ENT Specialist Kota`}
-              className="w-full h-full object-cover object-[center_20%] rounded-xl"
+              className="w-full h-full object-cover object-top rounded-xl"
               loading="lazy"
             />
             <span className="absolute top-3 right-3 bg-medicalnavy/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">

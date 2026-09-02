@@ -190,8 +190,8 @@ export const AdminDashboard = () => {
       <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 bg-soft">
         <div className="max-w-md w-full bg-white rounded-card p-8 shadow-2xl border border-slate-100 space-y-6">
           <div className="text-center space-y-2">
-            <div className="w-14 h-14 rounded-2xl bg-medical text-white flex items-center justify-center mx-auto shadow-md">
-              <Lock className="w-7 h-7 text-teal-100" />
+            <div className="w-16 h-16 rounded-full bg-white border border-slate-200 p-1 flex items-center justify-center mx-auto shadow-md">
+              <img src="/logo.png" alt="Gautam ENT Clinic" className="w-full h-full object-contain" />
             </div>
             <h2 className="text-2xl font-heading font-extrabold text-medical">Admin Gateway Login</h2>
             <p className="text-xs text-slate-500">
@@ -263,13 +263,18 @@ export const AdminDashboard = () => {
       {/* Header Bar */}
       <header className="bg-medical text-white py-6 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div>
-            <span className="text-xs text-teal-100 font-bold uppercase tracking-wider">
-              Management Portal
-            </span>
-            <h1 className="text-2xl font-heading font-extrabold text-white">
-              Gautam ENT Clinic Dashboard
-            </h1>
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-full bg-white p-1 flex items-center justify-center shadow flex-shrink-0">
+              <img src="/logo.png" alt="Gautam ENT Clinic Logo" className="w-full h-full object-contain" />
+            </div>
+            <div>
+              <span className="text-xs text-teal-100 font-bold uppercase tracking-wider">
+                Management Portal
+              </span>
+              <h1 className="text-2xl font-heading font-extrabold text-white">
+                Gautam ENT Clinic Dashboard
+              </h1>
+            </div>
           </div>
 
           <div className="flex items-center gap-3">

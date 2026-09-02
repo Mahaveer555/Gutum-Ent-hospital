@@ -153,20 +153,15 @@ export const About = () => {
                 </div>
               </div>
 
-              {/* Unique Hero Visual: Storefront Photo */}
+              {/* Unique Hero Visual: Official Clinic Storefront */}
               <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-950 aspect-[16/9] w-full flex items-center justify-center">
                   <img
-                    src="/images/original-gallery/IMG_20260811_115656.jpg.jpeg"
-                    alt="Gautam ENT Clinic storefront and main entrance at Shrinathpuram-A, Kota"
-                    className="w-full h-72 sm:h-80 object-cover object-center"
+                    src="/images/clinic/clinic_storefront_main.jpg"
+                    alt="Gautam Ear Nose Throat Clinic storefront and main entrance at Shrinathpuram-A, Kota"
+                    className="w-full h-full object-cover object-center"
                     loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-3 right-3 bg-slate-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 text-xs text-slate-300">
-                    <strong className="text-white font-bold block">Gautam ENT Clinic Facade</strong>
-                    <span className="text-[11px] text-slate-400">Shrinathpuram-A, Kota (Opposite Agnishaman Kendra)</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -314,18 +309,18 @@ export const About = () => {
             
             {/* Visual: Real Doctor Office Photo */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-slate-100 bg-slate-900">
+              <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-slate-100 bg-slate-900 aspect-[3/4] sm:h-[480px]">
                 <img
-                  src="/images/original-gallery/IMG_20260811_115945.jpg.jpeg"
-                  alt="Dr. Pragyanand Gautam consultation suite and office desk"
-                  className="w-full h-80 sm:h-96 object-cover object-center"
+                  src="/images/doctor-portrait.png"
+                  alt="Dr. Pragyanand Gautam consultation and office"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 bg-slate-900/85 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-white">
-                  <h4 className="font-heading font-bold text-base">Dr. Pragyanand Gautam</h4>
-                  <p className="text-xs text-cyan-300 font-semibold">MBBS, M.S. (ENT)</p>
-                  <p className="text-[11px] text-slate-400">State Medical Council Registered</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-slate-900/90 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/20 text-white shadow-xl">
+                  <h4 className="font-heading font-bold text-base sm:text-lg text-white drop-shadow-sm">Dr. Pragyanand Gautam</h4>
+                  <p className="text-xs text-cyan-300 font-semibold mt-0.5">MBBS, M.S. (ENT)</p>
+                  <p className="text-[11px] text-slate-300 font-medium mt-0.5">State Medical Council Registered</p>
                 </div>
               </div>
             </div>

@@ -1,25 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Filter, X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import { SEOHead } from '../utils/seo';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { GalleryCard } from '../components/GalleryCard';
 import { Lightbox } from '../components/Lightbox';
-import { galleryData, galleryCategories } from '../data/galleryLegacy';
+import { galleryData } from '../data/galleryLegacy';
 
 export const Gallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const filteredItems =
-    selectedCategory === 'All'
-      ? galleryData
-      : galleryData.filter((item) => item.category === selectedCategory);
-
-  const activeItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
+  const activeItem = lightboxIndex !== null ? galleryData[lightboxIndex] : null;
 
   const handleNext = () => {
-    if (lightboxIndex !== null && lightboxIndex < filteredItems.length - 1) {
+    if (lightboxIndex !== null && lightboxIndex < galleryData.length - 1) {
       setLightboxIndex(lightboxIndex + 1);
     }
   };
@@ -58,40 +51,14 @@ export const Gallery = () => {
           </div>
         </section>
 
-        {/* Category Filters */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 overflow-x-auto pb-3 pt-2 border-b border-slate-200 scrollbar-none">
-            <span className="text-xs font-bold text-[#102A43] uppercase tracking-wider flex items-center gap-1.5 mr-2 flex-shrink-0">
-              <Filter className="w-4 h-4 text-[#C92032]" /> Filter:
-            </span>
-
-            {galleryCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => {
-                  setSelectedCategory(cat);
-                  setLightboxIndex(null);
-                }}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex-shrink-0 ${
-                  selectedCategory === cat
-                    ? 'bg-[#C92032] text-white shadow-md'
-                    : 'bg-white text-[#102A43] hover:bg-slate-50 border border-[#E7EDF3]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        {/* Masonry Photo Grid */}
+        {/* Photos Grid */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             layout
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, idx) => (
+              {galleryData.map((item, idx) => (
                 <motion.div
                   layout
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -120,7 +87,7 @@ export const Gallery = () => {
             category={activeItem.category}
             onClose={() => setLightboxIndex(null)}
             onPrev={lightboxIndex > 0 ? handlePrev : null}
-            onNext={lightboxIndex < filteredItems.length - 1 ? handleNext : null}
+            onNext={lightboxIndex < galleryData.length - 1 ? handleNext : null}
           />
         )}
       </div>

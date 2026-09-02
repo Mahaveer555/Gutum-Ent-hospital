@@ -12,8 +12,12 @@ export const Footer = () => {
           {/* Col 1: Logo & Clinic Intro (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-medicalred to-medicalred-dark text-white flex items-center justify-center shadow-md">
-                <Plus className="w-6 h-6 stroke-[3]" />
+              <div className="w-12 h-12 rounded-full bg-white p-1 flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
+                <img
+                  src="/logo.png"
+                  alt="Gautam Ear Nose Throat Clinic Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="font-heading font-extrabold text-lg text-white tracking-tight block animate-slow-pulse">

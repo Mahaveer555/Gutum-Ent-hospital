@@ -21,9 +21,9 @@ export const DoctorCard = ({ doctor }) => {
       className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,48,57,0.12)]"
     >
       <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-        <div className="relative min-h-[420px] overflow-hidden bg-[#0a3038] p-6 sm:p-8">
-          <img src="/images/clinic/examination_room.webp" alt="ENT examination room at Gautam ENT Clinic" className="absolute inset-0 h-full w-full object-cover opacity-75" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#071f26] via-[#082c34]/65 to-[#082c34]/20" />
+        <div className="relative min-h-[420px] overflow-hidden bg-slate-900 p-6 sm:p-8">
+          <img src="/images/doctor-portrait.png" alt="Dr. Pragyanand Gautam - ENT Specialist Kota" className="absolute inset-0 h-full w-full object-cover object-top opacity-95" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
           <div className="relative flex h-full flex-col justify-between">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md"><Stethoscope className="h-3.5 w-3.5 text-[#86ddd0]" />Gautam ENT Clinic</span>
             <div>

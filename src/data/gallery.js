@@ -6,43 +6,7 @@ export const galleryCategories = [
 ];
 
 export const galleryData = [
-  // --- All 13 Unique Original Clinic Photos from gotii ---
-  {
-    id: "orig-photo-01",
-    title: "Gautam ENT Clinic Main Facade & Storefront",
-    category: "Original Clinic Photos",
-    src: "/images/original-gallery/IMG_20260811_115656.jpg.jpeg",
-    alt: "Gautam Ear Nose Throat Clinic storefront and main entrance in Kota",
-    caption: "Primary storefront photograph showing Gautam Ear Nose Throat Clinic and Vansh Medical at Shrinathpuram-A, Kota.",
-    aspectType: "ultra-wide",
-    aspectClass: "aspect-[16/9] sm:aspect-[21/9]",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-2",
-    objectPosition: "object-center"
-  },
-  {
-    id: "orig-photo-02",
-    title: "Clinic Building Entrance Stairs & Signage",
-    category: "Original Clinic Photos",
-    src: "/images/original-gallery/IMG_20260811_115732.jpg.jpeg",
-    alt: "Front entry stairs and prominent Gautam ENT Clinic signboard in Kota",
-    caption: "Entrance steps leading up to the main consultation suite and diagnostic signboard.",
-    aspectType: "portrait",
-    aspectClass: "aspect-[3/4]",
-    colSpan: "col-span-1",
-    objectPosition: "object-top"
-  },
-  {
-    id: "orig-photo-03",
-    title: "Storefront View & Pharmacy Entry",
-    category: "Original Clinic Photos",
-    src: "/images/original-gallery/IMG_20260811_115735.jpg.jpeg",
-    alt: "Entrance doorway leading to Vansh Medical and consultation suite",
-    caption: "Vertical perspective showing the entrance lobby and in-house pharmacy counter.",
-    aspectType: "portrait",
-    aspectClass: "aspect-[3/4]",
-    colSpan: "col-span-1",
-    objectPosition: "object-top"
-  },
+  // --- Original Clinic Facilities & Equipment Photos ---
   {
     id: "orig-photo-04",
     title: "Specialized ENT Examination Suite",
@@ -149,18 +113,6 @@ export const galleryData = [
     aspectType: "square",
     aspectClass: "aspect-[4/5]",
     colSpan: "col-span-1",
-    objectPosition: "object-center"
-  },
-  {
-    id: "orig-photo-13",
-    title: "Clinic Building Facade & Market View",
-    category: "Original Clinic Photos",
-    src: "/images/original-gallery/IMG_20260811_115711.jpg.jpeg",
-    alt: "Wide facade view of Gautam ENT Clinic building in Kota",
-    caption: "Wide street-level perspective of the clinic building frontage at Shrinathpuram-A, Kota.",
-    aspectType: "ultra-wide",
-    aspectClass: "aspect-[16/9]",
-    colSpan: "col-span-1 sm:col-span-2",
     objectPosition: "object-center"
   }
 ];

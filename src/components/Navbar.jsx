@@ -47,13 +47,13 @@ export const Navbar = () => {
           
           {/* Clinic Brand Logo & Title */}
           <Link to="/" className="flex items-center gap-3 group focus:outline-none">
-            {/* Custom SVG ENT Logo */}
-            <div className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-softblue border-2 border-medicalred flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform overflow-hidden">
-              <svg className="w-8 h-8 text-medicalred" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M30 35C30 35 42 22 55 30C65 36 62 48 58 52C55 55 52 58 54 65C56 72 45 78 40 70" stroke="#102A43" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M48 44C45 42 42 45 42 49C42 53 46 54 48 57C50 60 48 64 45 62" stroke="#C92032" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="50" cy="50" r="3" fill="#C92032" />
-              </svg>
+            {/* Official ENT Clinic Logo */}
+            <div className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white border-2 border-medicalnavy/10 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform overflow-hidden flex-shrink-0 p-0.5">
+              <img
+                src="/logo.png"
+                alt="Gautam ENT Clinic Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <span className="font-heading font-extrabold text-base md:text-lg text-medicalnavy tracking-tight block leading-tight">
