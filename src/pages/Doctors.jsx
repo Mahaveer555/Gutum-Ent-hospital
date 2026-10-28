@@ -13,8 +13,9 @@ export const Doctors = () => {
   return (
     <>
       <SEOHead
-        title="ENT Specialist Doctor in Kota | Gautam ENT Clinic"
-        description="Meet the ENT specialist doctor at Gautam ENT Clinic Kota. Learn about specialized care for ear infections, hearing loss, sinus disorders, and pediatric ENT."
+        title="Best ENT Specialist in Kota | Dr. Pragyanand Gautam (M.S. ENT)"
+        description="Consult Dr. Pragyanand Gautam (MBBS, M.S. ENT), recognized as the best ENT specialist and doctor in Kota with 12+ years of surgical experience. Book an appointment today."
+        keywords="best ent specialist in kota, best ent doctor in kota, best ent dr near me, best ent dentist in kota, dr pragyanand gautam, ent clinic kota"
         canonical="https://gautamentclinic.com/doctors"
         breadcrumbs={[
           { name: 'Home', url: 'https://gautamentclinic.com/' },
@@ -28,10 +29,10 @@ export const Doctors = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Breadcrumb current="Doctors" />
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
-              ENT Specialist &amp; Doctor Profile
+              Best ENT Specialist Doctor in Kota
             </h1>
             <p className="mt-3 text-base md:text-lg text-rose-100 max-w-2xl font-normal leading-relaxed">
-              Professional consultation for adults and children facing ear, nose, and throat health concerns in Kota.
+              Dr. Pragyanand Gautam (MBBS, M.S. ENT) – 12+ years of dedicated clinical expertise providing advanced ear, nose, throat, and oral care in Kota.
             </p>
           </div>
         </section>

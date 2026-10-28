@@ -52,8 +52,9 @@ I would like to request an appointment.`;
   return (
     <>
       <SEOHead
-        title="Contact Gautam ENT Clinic Kota | Location & WhatsApp Enquiry"
-        description="Contact Gautam ENT Clinic in Shreenath Puram, Kota. Call +91 70145 61171 or send a formatted WhatsApp message to request an appointment."
+        title="Best ENT Doctor Near Me in Kota | Contact Gautam ENT Clinic"
+        description="Contact Gautam ENT Clinic in Shrinathpuram-A, Kota. Consult Dr. Pragyanand Gautam, the best ENT doctor near you. Call +91 70145 61171 or book via WhatsApp."
+        keywords="best ent dr near me, best ent doctor near me, best ent specialist in kota, best ent clinic in kota, contact gautam ent clinic, ent clinic shrinathpuram kota"
         canonical="https://gautamentclinic.com/contact"
         breadcrumbs={[
           { name: 'Home', url: 'https://gautamentclinic.com/' },

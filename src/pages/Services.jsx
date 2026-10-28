@@ -37,8 +37,9 @@ export const Services = () => {
   return (
     <>
       <SEOHead
-        title="ENT Services in Kota | Ear, Nose & Throat Consultation"
-        description="Comprehensive ENT services at Gautam ENT Clinic Kota: Ear infection care, hearing loss assessment, sinusitis treatment, nasal allergy, tonsillitis, vertigo, and pediatric ENT."
+        title="Best ENT Services in Kota | Ear, Nose, Throat & Oral Care"
+        description="Comprehensive ENT & oral healthcare services at Gautam ENT Clinic Kota: ear infection, hearing loss, sinusitis, tonsillitis, vertigo, TMJ jaw pain & pediatric ENT by Dr. Pragyanand Gautam."
+        keywords="best ent specialist in kota, best ent doctor in kota, best ent dentist in kota, best ent dr near me, ent services kota, ear infection treatment kota, sinusitis treatment kota"
         canonical="https://gautamentclinic.com/services"
         breadcrumbs={[
           { name: 'Home', url: 'https://gautamentclinic.com/' },
@@ -54,10 +55,10 @@ export const Services = () => {
               <div className="lg:col-span-8">
                 <Breadcrumb current="Services" />
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight mt-2">
-                  Specialized ENT Services &amp; Consultations
+                  Best ENT &amp; Oral Health Services in Kota
                 </h1>
                 <p className="mt-3 text-base md:text-lg text-rose-100 max-w-2xl font-normal leading-relaxed">
-                  Explore our clinical consultation offerings for ear, nose, throat, voice, and pediatric otolaryngology concerns in Kota.
+                  Expert clinical consultations and treatments for ear, nose, throat, oral cavity, voice, and pediatric otolaryngology conditions by Kota's leading ENT specialist.
                 </p>
               </div>
               <div className="lg:col-span-4 hidden lg:block">

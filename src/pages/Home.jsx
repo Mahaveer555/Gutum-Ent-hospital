@@ -17,16 +17,19 @@ import {
   ChevronRight,
   Camera,
   Stethoscope,
-  Sparkles
+  Sparkles,
+  Award
 } from 'lucide-react';
 import { SEOHead } from '../utils/seo';
 import { HeroSection } from '../components/HeroSection';
 import { SectionHeading } from '../components/SectionHeading';
 import { EmergencyNotice } from '../components/EmergencyNotice';
 import { GoogleMap } from '../components/GoogleMap';
+import { FAQAccordion } from '../components/FAQAccordion';
 import { clinicData, getWhatsAppUrl } from '../data/clinic';
 import { servicesData } from '../data/services';
 import { doctorsData } from '../data/doctors';
+import { faqsData } from '../data/faqs';
 
 export const Home = () => {
   const doctor = doctorsData[0]; // Dr. Pragyanand Gautam
@@ -65,9 +68,14 @@ export const Home = () => {
   return (
     <>
       <SEOHead
-        title="Gautam ENT Clinic | Best ENT Clinic in Kota"
-        description="Gautam Ear Nose Throat Clinic in Shrinathpuram-A, Kota, Rajasthan. Expert ENT consultation by Dr. Pragyanand Gautam. Call +91 70145 61171 for appointments."
-        canonical="https://gautamentclinickota.com/"
+        title="Best ENT Specialist in Kota | Best ENT Dr Near Me | Gautam ENT Clinic"
+        description="Looking for the best ENT specialist in Kota or best ENT doctor near me? Visit Gautam ENT Clinic in Shrinathpuram-A Kota. Consult Dr. Pragyanand Gautam (MBBS, M.S. ENT) for ear, nose, throat & oral-dental related care. Call +91 70145 61171."
+        keywords="best ent specialist in kota, best ent dentist in kota, best ent dr near me, best ent doctor in kota, ent clinic in kota, best ear doctor kota, ent hospital in kota, dr pragyanand gautam ent, ear nose throat clinic kota rajasthan"
+        canonical="https://gautamentclinic.com/"
+        faqItems={faqsData}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://gautamentclinic.com/' },
+        ]}
       />
 
       <div className="space-y-12 md:space-y-16 pb-16 bg-slate-50 text-slate-800 font-sans">
@@ -178,15 +186,15 @@ export const Home = () => {
             <div className="lg:col-span-7 space-y-6 text-slate-700">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider">
                 <Stethoscope className="w-3.5 h-3.5 text-cyan-600" />
-                <span>Doctor Spotlight</span>
+                <span>Best ENT Specialist in Kota</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight">
-                Expert &amp; Compassionate ENT Care in Kota
+                Dr. Pragyanand Gautam – Leading ENT Specialist &amp; Doctor in Kota
               </h2>
 
               <p className="text-base text-slate-600 leading-relaxed">
-                {doctor.description}
+                Widely acknowledged among the <strong className="text-slate-900">best ENT specialists in Kota</strong>, Dr. Pragyanand Gautam (MBBS, M.S. ENT) brings over 12 years of clinical excellence. He provides specialized evaluations for ear, nose, throat, voice, and oral cavity concerns using high-precision surgical microscopes and patient-friendly care.
               </p>
 
               <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
@@ -392,7 +400,163 @@ export const Home = () => {
           </div>
         </section>
 
-        {/* SECTION 7: Contact, Location Map & Emergency Section */}
+        {/* SECTION 7: Local Authority - Best ENT Specialist, ENT-Dental Care & ENT Doctor Near Me */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="bg-gradient-to-br from-slate-900 via-medicalnavy to-slate-900 text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl border border-slate-800 space-y-10">
+            
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider">
+                <Award className="w-3.5 h-3.5 text-cyan-400" />
+                Kota's Trusted ENT &amp; Oral Care Hub
+              </span>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
+                Best ENT Specialist in Kota &amp; Best ENT Doctor Near You
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Whether you need specialized treatment for ear pain, sinusitis, tonsillitis, or interconnected oral-dental and throat complications, Gautam ENT Clinic provides gold-standard medical consultations.
+              </p>
+            </div>
+
+            {/* 3 Informational Authority Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              {/* Card 1: Best ENT Specialist in Kota */}
+              <div className="bg-slate-800/80 rounded-2xl p-6 border border-slate-700/80 flex flex-col justify-between space-y-4 hover:border-cyan-500/50 transition-colors">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
+                    <UserCheck className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-white">
+                    Best ENT Specialist in Kota
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Led by <strong className="text-white">Dr. Pragyanand Gautam (MBBS, M.S. ENT)</strong> with 12+ years of surgical experience. Equipped with advanced binocular ENT surgical microscopes for precise ear and nasal diagnostic evaluations.
+                  </p>
+                </div>
+                <ul className="text-xs text-slate-400 space-y-2 pt-2 border-t border-slate-700/60">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Microscopic Ear &amp; Tympanic Checkups</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Advanced Sinus &amp; Nasal Allergy Care</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Pediatric ENT &amp; Hearing Assessments</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Card 2: Best ENT & Dental / Oral Health Care (Addressing "best ent dentist in kota") */}
+              <div className="bg-slate-800/80 rounded-2xl p-6 border border-slate-700/80 flex flex-col justify-between space-y-4 hover:border-cyan-500/50 transition-colors">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                    <HeartPulse className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-white">
+                    ENT &amp; Dental / Oral Health Connection
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Searching for an <strong className="text-white">ENT Dentist or Oral &amp; ENT Specialist in Kota</strong>? Many ear, nose, and sinus conditions originate in the oral cavity and teeth. We provide specialized medical diagnosis for interconnected head-neck conditions.
+                  </p>
+                </div>
+                <ul className="text-xs text-slate-400 space-y-2 pt-2 border-t border-slate-700/60">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Odontogenic (Tooth-related) Sinusitis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>TMJ Jaw Pain radiating to Ears</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Oral Ulcers, Tonsils &amp; Salivary Glands</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Card 3: Best ENT Dr Near Me in Kota */}
+              <div className="bg-slate-800/80 rounded-2xl p-6 border border-slate-700/80 flex flex-col justify-between space-y-4 hover:border-cyan-500/50 transition-colors">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-white">
+                    Best ENT Doctor Near Me in Kota
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Located centrally at <strong className="text-white">58, Shrinathpuram-A</strong>, Gautam ENT Clinic is within 5–15 minutes of all prominent residential and coaching hubs across Kota, with easy roadside parking and in-house pharmacy.
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-slate-700/60">
+                  <span className="text-[11px] font-semibold text-cyan-400 uppercase tracking-wider block mb-2">
+                    Quick Access from Localities:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Shrinathpuram</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Talwandi</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Dadabari</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Mahaveer Nagar</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Vigyan Nagar</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Jawahar Nagar</span>
+                    <span className="bg-white/10 px-2 py-0.5 rounded">Kunhari</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Direct Consultation Bar */}
+            <div className="bg-slate-800/90 rounded-2xl p-4 sm:p-6 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="text-center sm:text-left">
+                <h4 className="font-heading font-bold text-base sm:text-lg text-white">
+                  Need an urgent consultation with Kota's top ENT specialist?
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
+                  Consultation timings: Mon–Sat 5:00 PM – 8:00 PM. Call before visiting to confirm doctor availability.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <a
+                  href={`tel:${clinicData.rawPhone}`}
+                  className="inline-flex items-center gap-2 bg-medicalred hover:bg-red-600 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call +91 70145 61171</span>
+                </a>
+                <a
+                  href={getWhatsAppUrl("Hello Dr. Gautam, I am looking for the best ENT specialist in Kota for consultation.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-md transition-all"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* SECTION 8: FAQ Section with FAQAccordion (Google FAQ Rich Snippets) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+          <SectionHeading
+            badge="Frequently Asked Questions"
+            title="Best ENT Specialist &amp; Doctor in Kota – FAQs"
+            subtitle="Common questions about ENT consultations, ear-nose-throat symptoms, oral health connections, and visiting hours in Kota."
+          />
+
+          <div className="mt-8">
+            <FAQAccordion items={faqsData} />
+          </div>
+        </section>
+
+        {/* SECTION 9: Contact, Location Map & Emergency Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200 grid grid-cols-1 lg:grid-cols-12 gap-8">
             

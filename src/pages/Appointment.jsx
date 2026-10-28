@@ -23,8 +23,9 @@ export const Appointment = () => {
   return (
     <>
       <SEOHead
-        title="Book Appointment | Gautam ENT Clinic Kota"
-        description="Book an ENT consultation appointment at Gautam ENT Clinic in Shreenath Puram, Kota. Call +91 70145 61171 or submit your online request form."
+        title="Book Appointment | Best ENT Specialist in Kota | Gautam ENT Clinic"
+        description="Book consultation with Dr. Pragyanand Gautam, the best ENT specialist in Kota. Easy online and WhatsApp appointment for ear, nose, throat & oral care."
+        keywords="book ent appointment kota, best ent specialist in kota, best ent dr near me, best ent dentist in kota, dr pragyanand gautam appointment"
         canonical="https://gautamentclinic.com/appointment"
         breadcrumbs={[
           { name: 'Home', url: 'https://gautamentclinic.com/' },

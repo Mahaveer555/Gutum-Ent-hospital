@@ -26,21 +26,20 @@ export const HeroSection = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs sm:text-sm font-medium text-cyan-300">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Trusted ENT Medical Clinic • Shrinathpuram-A, Kota</span>
+              <span>Top Rated ENT Care in Kota • Best ENT Doctor Near You</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-[1.12]">
-              Advanced Care for Your <br className="hidden sm:block" />
+              Best ENT Specialist in Kota <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-blue-200">
-                Ear, Nose &amp; Throat Health
+                Ear, Nose, Throat &amp; Oral Care
               </span>
             </h1>
 
             {/* Sub-description */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Specialized clinical diagnosis and compassionate ear, nose, throat, voice, and sinus care by{' '}
-              <strong className="text-white font-semibold">Dr. Pragyanand Gautam (MBBS, M.S. ENT)</strong>.
+              Looking for the <strong className="text-white font-semibold">best ENT specialist in Kota</strong> or <strong className="text-white font-semibold">best ENT doctor near me</strong>? Visit Gautam ENT Clinic for specialized clinical diagnosis by <strong className="text-white font-semibold">Dr. Pragyanand Gautam (MBBS, M.S. ENT)</strong>.
             </p>
 
             {/* Action Buttons: WhatsApp, Call, Directions */}
@@ -128,14 +127,14 @@ export const HeroSection = () => {
                     <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-cyan-400/80 flex-shrink-0 bg-slate-700">
                       <img 
                         src="/images/dr-pragyanand-gautam.png" 
-                        alt="Dr. Pragyanand Gautam" 
+                        alt="Dr. Pragyanand Gautam - Best ENT Specialist in Kota" 
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-base text-white">Dr. Pragyanand Gautam</h3>
                       <p className="text-xs text-cyan-300 font-medium">MBBS, M.S. (ENT)</p>
-                      <p className="text-[11px] text-slate-400">Ear, Nose &amp; Throat Specialist</p>
+                      <p className="text-[11px] text-slate-400">Best ENT Specialist in Kota</p>
                     </div>
                   </div>
 

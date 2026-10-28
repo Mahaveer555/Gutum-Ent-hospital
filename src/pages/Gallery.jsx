@@ -26,12 +26,13 @@ export const Gallery = () => {
   return (
     <>
       <SEOHead
-        title="Clinic Photo Gallery | Gautam Ear Nose Throat Clinic Kota"
-        description="Explore the original photographs of Gautam Ear Nose Throat Clinic in Shrinathpuram-A, Kota. See our diagnostic microscope, consultation suite, and facilities."
-        canonical="https://gautamentclinickota.com/gallery"
+        title="Clinic Photo Gallery | Best ENT Clinic in Kota"
+        description="Take a photo tour of Gautam ENT Clinic in Shrinathpuram-A Kota. View our precision ENT surgical microscope, patient examination suites, and modern facilities."
+        keywords="best ent clinic in kota, best ent specialist in kota, best ent dr near me, ent equipment kota, gautam ent clinic photos"
+        canonical="https://gautamentclinic.com/gallery"
         breadcrumbs={[
-          { name: 'Home', url: 'https://gautamentclinickota.com/' },
-          { name: 'Gallery', url: 'https://gautamentclinickota.com/gallery' },
+          { name: 'Home', url: 'https://gautamentclinic.com/' },
+          { name: 'Gallery', url: 'https://gautamentclinic.com/gallery' },
         ]}
       />
 

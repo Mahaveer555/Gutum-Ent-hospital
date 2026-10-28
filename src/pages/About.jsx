@@ -94,12 +94,13 @@ export const About = () => {
   return (
     <>
       <SEOHead
-        title="About Gautam ENT Clinic Kota | Dr. Pragyanand Gautam MBBS M.S. ENT"
-        description="Learn about Gautam Ear Nose Throat Clinic in Shrinathpuram-A, Kota, Rajasthan. Dedicated ENT medical care by Dr. Pragyanand Gautam, MBBS, M.S. (ENT)."
-        canonical="https://gautamentclinickota.com/about"
+        title="About Gautam ENT Clinic | Best ENT Specialist in Kota"
+        description="Learn about Gautam ENT Clinic in Shrinathpuram-A, Kota. Led by Dr. Pragyanand Gautam (MBBS, M.S. ENT), recognized as the best ENT specialist in Kota for compassionate, evidence-based care."
+        keywords="best ent specialist in kota, best ent clinic in kota, best ent doctor in kota, dr pragyanand gautam ent, about gautam ent clinic kota"
+        canonical="https://gautamentclinic.com/about"
         breadcrumbs={[
-          { name: 'Home', url: 'https://gautamentclinickota.com/' },
-          { name: 'About', url: 'https://gautamentclinickota.com/about' },
+          { name: 'Home', url: 'https://gautamentclinic.com/' },
+          { name: 'About', url: 'https://gautamentclinic.com/about' },
         ]}
       />
 
