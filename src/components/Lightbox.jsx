@@ -33,17 +33,17 @@ export const Lightbox = ({ image, title, caption, category, onClose, onPrev, onN
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800 text-white z-10">
+        <div className="flex items-center justify-between px-4 py-3 bg-[#171717] border-b border-neutral-800 text-white z-10">
           <div className="flex items-center gap-2">
-            <Camera className="w-4 h-4 text-emerald-400" />
-            <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
-              {category || "Gallery Preview"}
+            <Camera className="w-4 h-4 text-[#ef2028]" />
+            <span className="text-xs font-semibold text-neutral-300 uppercase tracking-wider">
+              {category || "Clinic Gallery"}
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+            className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#ef2028] transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -83,9 +83,9 @@ export const Lightbox = ({ image, title, caption, category, onClose, onPrev, onN
 
         {/* Caption & Title Footer */}
         {(title || caption) && (
-          <div className="p-4 bg-slate-900 text-slate-200 border-t border-slate-800 space-y-1 text-center">
+          <div className="p-4 bg-[#171717] text-neutral-200 border-t border-neutral-800 space-y-1 text-center">
             {title && <h3 className="font-heading font-bold text-base text-white">{title}</h3>}
-            {caption && <p className="text-xs text-slate-400 max-w-3xl mx-auto">{caption}</p>}
+            {caption && <p className="text-xs text-neutral-400 max-w-3xl mx-auto">{caption}</p>}
           </div>
         )}
       </div>

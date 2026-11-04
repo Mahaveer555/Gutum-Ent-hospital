@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 import { SEOHead } from '../utils/seo';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { EmergencyNotice } from '../components/EmergencyNotice';
 import { servicesData } from '../data/services';
 import { clinicData, getWhatsAppUrl } from '../data/clinic';
 
@@ -47,9 +46,12 @@ export const Services = () => {
         ]}
       />
 
-      <div className="space-y-12 pb-16">
+      <div className="space-y-12 pb-16 bg-[#faf9f7] min-h-screen text-[#404040]">
         {/* Hero Banner */}
-        <section className="bg-gradient-to-r from-[#102A43] via-[#102A43]/90 to-[#8F1020] text-white py-10 md:py-16 relative overflow-hidden">
+        <section className="bg-gradient-to-r from-[#171717] via-[#262626] to-[#171717] text-white py-10 md:py-16 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-20">
+            <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#ef2028] rounded-full filter blur-[120px]" />
+          </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8">
@@ -74,16 +76,11 @@ export const Services = () => {
           </div>
         </section>
 
-        {/* Emergency Notice */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <EmergencyNotice />
-        </div>
-
         {/* Category Filters with Red Fill */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 overflow-x-auto pb-4 pt-2 scrollbar-none border-b border-roseborder/60">
-            <span className="text-xs font-bold text-darkheading uppercase tracking-wider flex items-center gap-1.5 mr-2 flex-shrink-0">
-              <Filter className="w-4 h-4 text-medicalred" /> Filter:
+          <div className="flex items-center gap-3 overflow-x-auto pb-4 pt-2 scrollbar-none border-b border-neutral-200">
+            <span className="text-xs font-bold text-[#171717] uppercase tracking-wider flex items-center gap-1.5 mr-2 flex-shrink-0">
+              <Filter className="w-4 h-4 text-[#ef2028]" /> Filter:
             </span>
 
             {categories.map((cat) => (
@@ -92,8 +89,8 @@ export const Services = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap flex-shrink-0 ${
                   selectedCategory === cat || (cat === 'All Services' && selectedCategory === 'All')
-                    ? 'bg-gradient-to-r from-medicalred to-medicalred-dark text-white shadow-red-btn'
-                    : 'bg-white text-darkheading hover:bg-rosebg border border-roseborder'
+                    ? 'bg-[#ef2028] text-white shadow-[0_8px_25px_rgba(239,32,40,0.35)]'
+                    : 'bg-white text-neutral-700 hover:border-[#ef2028] hover:text-[#ef2028] border border-neutral-300'
                 }`}
               >
                 {cat}
@@ -109,19 +106,19 @@ export const Services = () => {
               <div
                 key={service.id}
                 id={service.id}
-                className="bg-white rounded-card p-6 md:p-8 shadow-hospital border border-roseborder hover:border-medicalred/40 transition-all scroll-mt-24"
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-200 hover:border-[#ef2028]/40 hover:shadow-md transition-all scroll-mt-24"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   {/* Left Column: Image */}
                   <div className="lg:col-span-4 space-y-4">
-                    <div className="relative rounded-2xl overflow-hidden shadow-md aspect-video bg-rosebg">
+                    <div className="relative rounded-2xl overflow-hidden shadow-sm aspect-video bg-[#faf9f7] border border-neutral-200">
                       <img
                         src={service.image}
                         alt={`${service.title} consultation at Gautam ENT Clinic Kota`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
-                      <div className="absolute top-3 left-3 bg-medicalred text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                      <div className="absolute top-3 left-3 bg-[#ef2028] text-white text-xs font-bold px-3 py-1 rounded-full shadow">
                         {service.category} Category
                       </div>
                     </div>
@@ -130,23 +127,23 @@ export const Services = () => {
                   {/* Right Column: Complete Details & CTA Buttons */}
                   <div className="lg:col-span-8 space-y-5">
                     <div>
-                      <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-darkheading">
+                      <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-[#171717]">
                         {service.title}
                       </h2>
-                      <p className="text-base text-bodytext mt-2 leading-relaxed font-normal">
+                      <p className="text-base text-neutral-600 mt-2 leading-relaxed font-normal">
                         {service.overview}
                       </p>
                     </div>
 
                     {/* Common Symptoms */}
                     <div>
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-medicalred mb-2 flex items-center gap-1.5">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#ef2028] mb-2 flex items-center gap-1.5">
                         <Info className="w-4 h-4" /> Common Symptoms Evaluated:
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {service.symptoms.map((symptom, sIdx) => (
-                          <div key={sIdx} className="flex items-center gap-2 text-xs md:text-sm font-medium text-darkheading bg-rosebg p-2.5 rounded-lg border border-roseborder">
-                            <CheckCircle2 className="w-4 h-4 text-successgreen flex-shrink-0" />
+                          <div key={sIdx} className="flex items-center gap-2 text-xs md:text-sm font-medium text-[#171717] bg-[#faf9f7] p-2.5 rounded-lg border border-neutral-200">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                             <span>{symptom}</span>
                           </div>
                         ))}
@@ -164,10 +161,10 @@ export const Services = () => {
                     </div>
 
                     {/* Call Now & WhatsApp Enquiry Buttons */}
-                    <div className="pt-3 border-t border-roseborder/60 flex flex-col sm:flex-row items-center justify-end gap-3">
+                    <div className="pt-3 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-end gap-3">
                       <a
                         href={`tel:${clinicData.rawPhone}`}
-                        className="w-full sm:w-auto bg-gradient-to-r from-medicalred to-medicalred-dark text-white font-bold text-xs md:text-sm px-6 py-3 rounded-xl shadow-red-btn transition-all inline-flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto bg-[#ef2028] hover:bg-[#cf131b] text-white font-bold text-xs md:text-sm px-6 py-3 rounded-xl shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all inline-flex items-center justify-center gap-2"
                       >
                         <Phone className="w-4 h-4 animate-ring" /> Call Now ({clinicData.phone})
                       </a>

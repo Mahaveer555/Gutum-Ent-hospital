@@ -35,17 +35,17 @@ export const ContactForm = () => {
 
   if (submitted) {
     return (
-      <div className="bg-white rounded-card p-6 md:p-8 shadow-medical border border-teal/30 text-center animate-fadeIn">
-        <div className="w-14 h-14 rounded-full bg-success/10 text-success flex items-center justify-center mx-auto mb-3">
+      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-200 text-center animate-fadeIn">
+        <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-3 border border-emerald-200">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <h3 className="text-2xl font-heading font-extrabold text-medical">Message Sent</h3>
-        <p className="text-sm text-slate-600 my-3 leading-relaxed">
+        <h3 className="text-2xl font-heading font-extrabold text-[#171717]">Message Sent</h3>
+        <p className="text-sm text-neutral-600 my-3 leading-relaxed">
           Thank you for contacting Gautam ENT Clinic, Kota. Our team will get back to you shortly.
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="bg-teal hover:bg-teal-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-all"
+          className="bg-[#ef2028] hover:bg-[#cf131b] text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all"
         >
           Send Another Message
         </button>
@@ -54,26 +54,26 @@ export const ContactForm = () => {
   }
 
   return (
-    <div className="bg-white rounded-card p-6 md:p-8 shadow-medical border border-slate-100">
-      <h3 className="text-2xl font-heading font-extrabold text-medical mb-1">
+    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-200">
+      <h3 className="text-2xl font-heading font-extrabold text-[#171717] mb-1">
         Send Us a Message
       </h3>
-      <p className="text-sm text-slate-600 mb-6">
+      <p className="text-sm text-neutral-600 mb-6">
         Have a question or general enquiry regarding ENT services in Kota?
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         {/* Name */}
         <div>
-          <label className="block text-xs font-bold text-medical uppercase mb-1">
-            Your Name <span className="text-coral">*</span>
+          <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+            Your Name <span className="text-[#ef2028]">*</span>
           </label>
           <input
             type="text"
             placeholder="Full Name"
             {...register('name', { required: 'Name is required' })}
             className={`w-full text-sm rounded-xl px-4 py-3 border ${
-              errors.name ? 'border-red-500 bg-red-50/20' : 'border-slate-200 focus:border-teal'
+              errors.name ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
             } focus:outline-none transition-colors`}
           />
           {errors.name && (
@@ -86,8 +86,8 @@ export const ContactForm = () => {
         {/* Phone & Email */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-bold text-medical uppercase mb-1">
-              Phone Number <span className="text-coral">*</span>
+            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+              Phone Number <span className="text-[#ef2028]">*</span>
             </label>
             <input
               type="tel"
@@ -100,7 +100,7 @@ export const ContactForm = () => {
                 },
               })}
               className={`w-full text-sm rounded-xl px-4 py-3 border ${
-                errors.phone ? 'border-red-500 bg-red-50/20' : 'border-slate-200 focus:border-teal'
+                errors.phone ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
               } focus:outline-none transition-colors`}
             />
             {errors.phone && (
@@ -111,29 +111,29 @@ export const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-medical uppercase mb-1">
-              Email Address <span className="text-slate-400 font-normal">(Optional)</span>
+            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+              Email Address <span className="text-neutral-400 font-normal">(Optional)</span>
             </label>
             <input
               type="email"
               placeholder="email@example.com"
               {...register('email')}
-              className="w-full text-sm rounded-xl px-4 py-3 border border-slate-200 focus:border-teal focus:outline-none transition-colors"
+              className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none transition-colors"
             />
           </div>
         </div>
 
         {/* Subject */}
         <div>
-          <label className="block text-xs font-bold text-medical uppercase mb-1">
-            Subject <span className="text-coral">*</span>
+          <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+            Subject <span className="text-[#ef2028]">*</span>
           </label>
           <input
             type="text"
             placeholder="e.g. Ear consultation inquiry"
             {...register('subject', { required: 'Subject is required' })}
             className={`w-full text-sm rounded-xl px-4 py-3 border ${
-              errors.subject ? 'border-red-500 bg-red-50/20' : 'border-slate-200 focus:border-teal'
+              errors.subject ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
             } focus:outline-none transition-colors`}
           />
           {errors.subject && (
@@ -145,8 +145,8 @@ export const ContactForm = () => {
 
         {/* Message */}
         <div>
-          <label className="block text-xs font-bold text-medical uppercase mb-1">
-            Message <span className="text-coral">*</span>
+          <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+            Message <span className="text-[#ef2028]">*</span>
           </label>
           <textarea
             rows="4"
@@ -156,7 +156,7 @@ export const ContactForm = () => {
               minLength: { value: 5, message: 'Message must be at least 5 characters' },
             })}
             className={`w-full text-sm rounded-xl px-4 py-3 border ${
-              errors.message ? 'border-red-500 bg-red-50/20' : 'border-slate-200 focus:border-teal'
+              errors.message ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
             } focus:outline-none transition-colors resize-none`}
           ></textarea>
           {errors.message && (
@@ -170,7 +170,7 @@ export const ContactForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-teal hover:bg-teal-700 disabled:bg-slate-400 text-white font-bold text-sm py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+          className="w-full bg-[#ef2028] hover:bg-[#cf131b] disabled:bg-neutral-400 text-white font-bold text-sm py-3.5 rounded-xl shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all flex items-center justify-center gap-2"
         >
           {loading ? (
             <>

@@ -6,33 +6,34 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Manrope', sans-serif;
-    color: #334E68;
+    color: #404040;
+    background-color: #faf9f7;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #102A43;
+    color: #171717;
   }
   
   :focus-visible {
-    outline: 2px solid #C92032;
+    outline: 2px solid #ef2028;
     outline-offset: 3px;
   }
 }
 
-/* Red Medical Theme Utilities */
+/* Aarogyam Red Medical Theme Utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 214, 217, 0.6);
+  border: 1px solid rgba(239, 32, 40, 0.12);
 }
 
 .glass-red {
-  background: rgba(164, 22, 26, 0.88);
+  background: rgba(239, 32, 40, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Keyframe Animations */
@@ -70,19 +71,19 @@
   animation: rotateSlow 20s linear infinite;
 }
 
-/* Custom Red Scrollbar */
+/* Custom Aarogyam Red Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F7FA;
+  background: #f7f6f3;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C92032;
+  background: #ef2028;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8F1020;
+  background: #cf131b;
 }
 
 /* Swiper Custom Pagination Bullets */

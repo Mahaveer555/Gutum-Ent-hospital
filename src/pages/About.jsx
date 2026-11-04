@@ -104,12 +104,12 @@ export const About = () => {
         ]}
       />
 
-      <div className="space-y-12 md:space-y-16 pb-16 bg-slate-50 text-slate-800 font-sans">
+      <div className="space-y-12 md:space-y-16 pb-16 bg-[#faf9f7] text-[#404040] font-sans">
         
         {/* SECTION 1: Premium About Hero */}
-        <section className="relative w-full bg-gradient-to-b from-slate-900 via-medicalnavy to-slate-900 text-white py-14 md:py-20 overflow-hidden">
+        <section className="relative w-full bg-gradient-to-b from-[#171717] via-[#262626] to-[#171717] text-white py-14 md:py-20 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-20">
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full filter blur-[128px]" />
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#ef2028] rounded-full filter blur-[140px]" />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -117,19 +117,19 @@ export const About = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-6">
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-cyan-300">
-                  <Building2 className="w-3.5 h-3.5 text-cyan-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-rose-300">
+                  <Building2 className="w-3.5 h-3.5 text-[#ef2028]" />
                   <span>Established ENT Care • Kota, Rajasthan</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
                   Thoughtful ENT Care, <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-blue-200">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-white to-rose-100">
                     Built Around You.
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
+                <p className="text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed font-normal">
                   Gautam Ear Nose Throat Clinic provides specialized medical consultations and thorough diagnostic evaluations for ear, nose, throat, voice, and sinus health in Shrinathpuram-A, Kota.
                 </p>
 
@@ -138,7 +138,7 @@ export const About = () => {
                     href={getWhatsAppUrl("Hello Gautam ENT Clinic, I would like to book a consultation appointment.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg transition-all"
+                    className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg transition-all"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Book Appointment on WhatsApp</span>
@@ -148,7 +148,7 @@ export const About = () => {
                     href={`tel:${clinicData.rawPhone}`}
                     className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-sm transition-all"
                   >
-                    <Phone className="w-4 h-4 text-cyan-300" />
+                    <Phone className="w-4 h-4 text-rose-300" />
                     <span>Call +91 70145 61171</span>
                   </a>
                 </div>
@@ -156,7 +156,7 @@ export const About = () => {
 
               {/* Unique Hero Visual: Official Clinic Storefront */}
               <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-950 aspect-[16/9] w-full flex items-center justify-center">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-neutral-800 bg-neutral-950 aspect-[16/9] w-full flex items-center justify-center">
                   <img
                     src="/images/clinic/clinic_storefront_main.jpg"
                     alt="Gautam Ear Nose Throat Clinic storefront and main entrance at Shrinathpuram-A, Kota"
@@ -175,7 +175,7 @@ export const About = () => {
             
             {/* Story Image: Reception & Waiting Room */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+              <div className="rounded-2xl overflow-hidden shadow-sm border border-neutral-200 bg-[#171717]">
                 <img
                   src="/images/original-gallery/IMG_20260811_115827.jpg.jpeg"
                   alt="Gautam ENT Clinic reception counter and patient waiting lounge"
@@ -186,30 +186,30 @@ export const About = () => {
             </div>
 
             {/* Story Content */}
-            <div className="lg:col-span-7 space-y-5 text-slate-700">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-bold uppercase tracking-wider">
-                <Building2 className="w-3.5 h-3.5 text-cyan-600" />
+            <div className="lg:col-span-7 space-y-5 text-neutral-700">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/10 text-[#ef2028] border border-[#ef2028]/20 text-xs font-bold uppercase tracking-wider">
+                <Building2 className="w-3.5 h-3.5 text-[#ef2028]" />
                 <span>Our Story &amp; Setting</span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-[#171717] tracking-tight leading-tight">
                 Dedicated ENT Consultations for Patients in Kota
               </h2>
 
-              <p className="text-base text-slate-600 leading-relaxed font-normal">
+              <p className="text-base text-neutral-600 leading-relaxed font-normal">
                 Gautam Ear Nose Throat Clinic was founded to provide reliable, patient-centered ENT consultations in Kota, Rajasthan. Located at Shrinathpuram-A (opposite Agnishaman Kendra), the clinic offers specialized checkups for common earaches, hearing changes, sinus congestion, allergies, throat infections, and voice concerns.
               </p>
 
-              <p className="text-base text-slate-600 leading-relaxed font-normal">
+              <p className="text-base text-neutral-600 leading-relaxed font-normal">
                 Our approach emphasizes detailed patient history, thorough physical examination, and objective diagnostic guidance using modern clinical instruments in a clean and organized clinical environment.
               </p>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-                <h4 className="font-heading font-bold text-sm text-slate-900 flex items-center gap-2">
+              <div className="bg-white p-5 rounded-2xl border border-neutral-200 shadow-sm space-y-3">
+                <h4 className="font-heading font-bold text-sm text-[#171717] flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   <span>Ethical Medical Guidelines</span>
                 </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-neutral-600 leading-relaxed">
                   We maintain strict transparency in medical advice, ensuring every patient receives objective medical assessment without unnecessary procedures or exaggerated claims.
                 </p>
               </div>
@@ -232,20 +232,20 @@ export const About = () => {
               return (
                 <div 
                   key={idx}
-                  className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow space-y-3 flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm hover:shadow-md hover:border-[#ef2028]/40 transition-all space-y-3 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center border border-cyan-100">
+                    <div className="w-12 h-12 rounded-xl bg-[#ef2028]/10 text-[#ef2028] flex items-center justify-center border border-[#ef2028]/20">
                       <IconComp className="w-6 h-6" />
                     </div>
-                    <h3 className="font-heading font-bold text-lg text-slate-900">
+                    <h3 className="font-heading font-bold text-lg text-[#171717]">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-xs text-neutral-600 leading-relaxed">
                       {card.desc}
                     </p>
                   </div>
-                  <span className="text-[11px] font-bold text-slate-400 pt-2 border-t border-slate-100 block">
+                  <span className="text-[11px] font-bold text-neutral-400 pt-2 border-t border-neutral-100 block">
                     Pillar 0{idx + 1}
                   </span>
                 </div>
@@ -255,17 +255,17 @@ export const About = () => {
         </section>
 
         {/* SECTION 4: Modern Facilities */}
-        <section className="bg-slate-900 text-white py-14">
+        <section className="bg-[#171717] text-white py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/20 text-rose-300 border border-[#ef2028]/30 text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-[#ef2028]" />
                 Infrastructure &amp; Setup
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight">
                 Modern Diagnostic Facilities
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
                 Take a look at the actual clinical equipment, diagnostic tools, and facility spaces available at Gautam ENT Clinic Kota.
               </p>
             </div>
@@ -274,7 +274,7 @@ export const About = () => {
               {facilitiesCards.map((fac) => (
                 <div 
                   key={fac.id}
-                  className="bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-700 shadow-xl group hover:border-cyan-500/50 transition-all duration-300 flex flex-col"
+                  className="bg-[#1f1f1f] rounded-2xl overflow-hidden border border-neutral-800 shadow-xl group hover:border-[#ef2028]/50 transition-all duration-300 flex flex-col"
                 >
                   <div className={`relative ${fac.aspectClass} w-full overflow-hidden bg-black`}>
                     <img 
@@ -283,17 +283,17 @@ export const About = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute top-3 left-3 bg-emerald-950/90 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-emerald-500/30 flex items-center gap-1">
-                      <Camera className="w-3 h-3 text-emerald-400" />
+                    <div className="absolute top-3 left-3 bg-[#171717]/90 text-rose-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-[#ef2028]/30 flex items-center gap-1">
+                      <Camera className="w-3 h-3 text-[#ef2028]" />
                       <span>{fac.category}</span>
                     </div>
                   </div>
                   <div className="p-4 space-y-1 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-heading font-bold text-sm text-white group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-heading font-bold text-sm text-white group-hover:text-rose-300 transition-colors">
                         {fac.title}
                       </h3>
-                      <p className="text-xs text-slate-400 leading-relaxed mt-1">
+                      <p className="text-xs text-neutral-400 leading-relaxed mt-1">
                         {fac.desc}
                       </p>
                     </div>
@@ -306,64 +306,64 @@ export const About = () => {
 
         {/* SECTION 5: Specialist Focus */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-neutral-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Visual: Real Doctor Office Photo */}
             <div className="lg:col-span-5">
-              <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-slate-100 bg-slate-900 aspect-[3/4] sm:h-[480px]">
+              <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-neutral-100 bg-[#171717] aspect-[3/4] sm:h-[480px]">
                 <img
                   src="/images/dr-pragyanand-gautam.png"
                   alt="Dr. Pragyanand Gautam consultation and office"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-slate-900/90 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/20 text-white shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-[#171717]/90 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/20 text-white shadow-xl">
                   <h4 className="font-heading font-bold text-base sm:text-lg text-white drop-shadow-sm">Dr. Pragyanand Gautam</h4>
-                  <p className="text-xs text-cyan-300 font-semibold mt-0.5">MBBS, M.S. (ENT)</p>
-                  <p className="text-[11px] text-slate-300 font-medium mt-0.5">State Medical Council Registered</p>
+                  <p className="text-xs text-rose-300 font-semibold mt-0.5">MBBS, M.S. (ENT)</p>
+                  <p className="text-[11px] text-neutral-400 font-medium mt-0.5">State Medical Council Registered</p>
                 </div>
               </div>
             </div>
 
             {/* Specialist Info */}
-            <div className="lg:col-span-7 space-y-5 text-slate-700">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-bold uppercase tracking-wider">
-                <Stethoscope className="w-3.5 h-3.5 text-cyan-600" />
+            <div className="lg:col-span-7 space-y-5 text-neutral-700">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/10 text-[#ef2028] border border-[#ef2028]/20 text-xs font-bold uppercase tracking-wider">
+                <Stethoscope className="w-3.5 h-3.5 text-[#ef2028]" />
                 <span>Specialist Focus</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-[#171717] tracking-tight">
                 Dr. Pragyanand Gautam — MBBS, M.S. (ENT)
               </h2>
 
-              <p className="text-base text-slate-600 leading-relaxed font-normal">
+              <p className="text-base text-neutral-600 leading-relaxed font-normal">
                 Dr. Pragyanand Gautam holds professional medical qualifications in Otolaryngology (MBBS, M.S. ENT) and is registered with the State Medical Council. He delivers dedicated clinical evaluations for common and persistent ear, nose, and throat concerns.
               </p>
 
-              <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
-                <h4 className="font-heading font-bold text-sm text-slate-900 uppercase tracking-wider text-cyan-900">
+              <div className="bg-[#faf9f7] p-5 rounded-2xl border border-neutral-200 space-y-3">
+                <h4 className="font-heading font-bold text-sm text-[#171717] uppercase tracking-wider">
                   Areas of ENT Consultation
                 </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-neutral-700">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
                     <span>Ear Pain &amp; Infection Evaluation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
                     <span>Hearing Assessment &amp; Tinnitus Guidance</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
                     <span>Sinusitis &amp; Nasal Allergy Care</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
                     <span>Throat, Tonsil &amp; Voice Evaluation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
                     <span>Pediatric ENT Concerns</span>
                   </div>
                 </div>
@@ -374,7 +374,7 @@ export const About = () => {
                   href={getWhatsAppUrl("Hello, I would like to book a consultation with Dr. Pragyanand Gautam.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm"
+                  className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Book Consultation on WhatsApp</span>
@@ -387,47 +387,47 @@ export const About = () => {
 
         {/* SECTION 6: Visit the Clinic & Location Map */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-neutral-200 grid grid-cols-1 lg:grid-cols-12 gap-8">
             
-            <div className="lg:col-span-5 space-y-6 text-slate-700">
+            <div className="lg:col-span-5 space-y-6 text-neutral-700">
               <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 text-xs font-bold uppercase tracking-wider mb-2">
-                  <MapPin className="w-3.5 h-3.5 text-cyan-600" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/10 text-[#ef2028] border border-[#ef2028]/20 text-xs font-bold uppercase tracking-wider mb-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#ef2028]" />
                   Clinic Address &amp; Directions
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-[#171717] tracking-tight">
                   Visit Gautam ENT Clinic
                 </h2>
               </div>
 
               <div className="space-y-4 text-sm">
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                  <MapPin className="w-5 h-5 text-cyan-700 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#faf9f7] border border-neutral-200">
+                  <MapPin className="w-5 h-5 text-[#ef2028] flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-slate-900 font-bold">Address</strong>
-                    <p className="text-slate-600 mt-0.5">
+                    <strong className="block text-[#171717] font-bold">Address</strong>
+                    <p className="text-neutral-600 mt-0.5">
                       58, Shrinathpuram-A, Kota, Rajasthan 324010<br />
-                      <span className="text-xs text-cyan-800 font-semibold">(Opposite Agnishaman Kendra / Near Falodi Mart)</span>
+                      <span className="text-xs text-[#ef2028] font-semibold">(Opposite Agnishaman Kendra / Near Falodi Mart)</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                  <Phone className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#faf9f7] border border-neutral-200">
+                  <Phone className="w-5 h-5 text-[#ef2028] flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-slate-900 font-bold">Phone Number</strong>
-                    <a href={`tel:${clinicData.rawPhone}`} className="text-red-600 font-bold hover:underline">
+                    <strong className="block text-[#171717] font-bold">Phone Number</strong>
+                    <a href={`tel:${clinicData.rawPhone}`} className="text-[#ef2028] font-bold hover:underline">
                       +91 70145 61171
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                  <Clock className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#faf9f7] border border-neutral-200">
+                  <Clock className="w-5 h-5 text-[#ef2028] flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-slate-900 font-bold">Consultation Timings</strong>
-                    <p className="text-slate-700">Mon - Sat: 5:00 PM - 8:00 PM</p>
-                    <p className="text-xs text-amber-800 font-semibold mt-0.5">
+                    <strong className="block text-[#171717] font-bold">Consultation Timings</strong>
+                    <p className="text-neutral-700">Mon - Sat: 5:00 PM - 8:00 PM</p>
+                    <p className="text-xs text-rose-800 font-semibold mt-0.5">
                       Please call +91 70145 61171 to confirm today's doctor consultation availability.
                     </p>
                   </div>
@@ -439,7 +439,7 @@ export const About = () => {
                   href={getWhatsAppUrl("Hello Gautam ENT Clinic, I would like to book a consultation slot.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-3 rounded-xl shadow-md transition-all text-xs sm:text-sm"
+                  className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-5 py-3 rounded-xl shadow-md transition-all text-xs sm:text-sm"
                 >
                   <MessageCircle className="w-4 h-4" />
                   <span>Book on WhatsApp</span>
@@ -449,15 +449,15 @@ export const About = () => {
                   href={clinicData.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-cyan-700 hover:bg-cyan-600 text-white font-bold px-5 py-3 rounded-xl shadow-md transition-all text-xs sm:text-sm"
+                  className="inline-flex items-center gap-2 bg-[#171717] hover:bg-[#262626] text-white font-bold px-5 py-3 rounded-xl shadow-md transition-all text-xs sm:text-sm"
                 >
-                  <Navigation className="w-4 h-4" />
+                  <Navigation className="w-4 h-4 text-rose-300" />
                   <span>Get Google Directions</span>
                 </a>
               </div>
             </div>
 
-            <div className="lg:col-span-7 h-80 lg:h-auto min-h-[320px] rounded-2xl overflow-hidden border border-slate-300 shadow-md relative">
+            <div className="lg:col-span-7 h-80 lg:h-auto min-h-[320px] rounded-2xl overflow-hidden border border-neutral-300 shadow-md relative">
               <GoogleMap height="100%" />
             </div>
 

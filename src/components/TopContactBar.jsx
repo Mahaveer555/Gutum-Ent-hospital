@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Navigation, AlertTriangle } from 'lucide-react';
+import { Phone, MapPin, Navigation } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
 export const TopContactBar = () => {
@@ -61,16 +61,6 @@ export const TopContactBar = () => {
             >
               <Navigation className="w-3.5 h-3.5 text-rose-200" />
               <span>Get Directions</span>
-            </a>
-
-            <span className="hidden lg:inline text-white/30">|</span>
-
-            <a
-              href="#emergency-notice"
-              className="hidden lg:inline-flex items-center gap-1 text-[11px] font-medium text-rose-200 hover:underline"
-            >
-              <AlertTriangle className="w-3 h-3 text-amber-300" />
-              <span>Emergency Notice</span>
             </a>
           </div>
         </div>

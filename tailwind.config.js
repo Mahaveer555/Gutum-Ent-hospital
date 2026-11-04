@@ -7,34 +7,61 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Aarogyam Medical Red Theme (#ef2028)
         medicalred: {
-          DEFAULT: '#C92032',
-          dark: '#8F1020',
-          50: '#FFF5F5',
-          100: '#FFE3E5',
-          200: '#FFC7CC',
-          300: '#FFA1A8',
-          400: '#FF6D78',
-          500: '#C92032',
-          600: '#B0182A',
-          700: '#8F1020',
-          800: '#6E0B17',
-          900: '#4D050D',
+          DEFAULT: '#ef2028',
+          dark: '#cf131b',
+          darker: '#b5121b',
+          deep: '#7d0b12',
+          bright: '#ef2028',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef2028',
+          600: '#e31b23',
+          700: '#cf131b',
+          800: '#b5121b',
+          900: '#7d0b12',
         },
+        // Aarogyam Charcoal & Slate Neutrals
         medicalnavy: {
-          DEFAULT: '#102A43',
-          light: '#243B53',
-          dark: '#0B1D33',
+          DEFAULT: '#171717',
+          light: '#262626',
+          dark: '#0f0f0f',
         },
-        softblue: '#F3F7FA',
-        bordergrey: '#E2E8F0',
+        // Warm Hospital Canvas (Aarogyam #faf9f7)
+        warmbg: '#faf9f7',
+        warmsurface: '#f7f6f3',
+        warmcard: '#ffffff',
+        hospitalgrey: '#faf9f7',
+        softblue: '#f7f6f3',
+        bordergrey: '#e5e2dc',
+        
+        // Brand & System Tokens
         whatsappgreen: '#25D366',
-        rosebg: '#FFF5F5',
-        roseborder: '#FFE3E5',
-        hospitalgrey: '#F3F7FA',
-        darkheading: '#102A43',
-        bodytext: '#334E68',
+        rosebg: '#fef2f2',
+        roseborder: '#fee2e2',
+        darkheading: '#171717',
+        bodytext: '#404040',
         successgreen: '#25D366',
+
+        // Legacy Fallback Mappings (fixes all legacy components)
+        medical: {
+          DEFAULT: '#ef2028',
+          dark: '#b5121b',
+        },
+        coral: {
+          DEFAULT: '#ef2028',
+          hover: '#cf131b',
+        },
+        teal: {
+          DEFAULT: '#171717',
+          hover: '#262626',
+          700: '#0f0f0f',
+        },
+        aqua: '#fef2f2',
       },
       fontFamily: {
         sans: ['Manrope', 'sans-serif'],
@@ -45,9 +72,10 @@ export default {
         'xl2': '24px',
       },
       boxShadow: {
-        'hospital': '0 8px 30px rgba(16, 42, 67, 0.04), 0 4px 12px rgba(201, 32, 50, 0.03)',
-        'hospital-lg': '0 16px 36px rgba(16, 42, 67, 0.08), 0 8px 24px rgba(201, 32, 50, 0.06)',
-        'red-btn': '0 6px 20px rgba(201, 32, 50, 0.3)',
+        'hospital': '0 8px 30px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(239, 32, 40, 0.04)',
+        'hospital-lg': '0 16px 36px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(239, 32, 40, 0.06)',
+        'red-btn': '0 8px 25px rgba(239, 32, 40, 0.35)',
+        'medical': '0 8px 30px rgba(239, 32, 40, 0.08)',
       }
     },
   },
