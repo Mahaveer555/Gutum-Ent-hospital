@@ -22,28 +22,28 @@ export const Lightbox = ({ image, title, caption, category, onClose, onPrev, onN
 
   return (
     <div 
-      className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-fadeIn"
+      className="fixed inset-0 z-50 bg-[#0a1424]/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-fadeIn"
       role="dialog"
       aria-modal="true"
       aria-label={title || "Gallery image viewer"}
       onClick={onClose}
     >
       <div 
-        className="relative max-w-5xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col max-h-[92vh]"
+        className="relative max-w-5xl w-full bg-[#0b2447] rounded-2xl overflow-hidden shadow-2xl border border-white/15 flex flex-col max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-[#171717] border-b border-neutral-800 text-white z-10">
+        <div className="flex items-center justify-between px-4 py-3 bg-[#0a1424] border-b border-white/10 text-white z-10">
           <div className="flex items-center gap-2">
-            <Camera className="w-4 h-4 text-[#ef2028]" />
-            <span className="text-xs font-semibold text-neutral-300 uppercase tracking-wider">
+            <Camera className="w-4 h-4 text-secondary-light" />
+            <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
               {category || "Clinic Gallery"}
             </span>
           </div>
 
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#ef2028] transition-colors"
+            className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-primary transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -62,7 +62,7 @@ export const Lightbox = ({ image, title, caption, category, onClose, onPrev, onN
           {onPrev && (
             <button
               onClick={onPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-transform active:scale-95"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-primary text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-transform active:scale-95"
               aria-label="Previous Image"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -73,7 +73,7 @@ export const Lightbox = ({ image, title, caption, category, onClose, onPrev, onN
           {onNext && (
             <button
               onClick={onNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-transform active:scale-95"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-primary text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-transform active:scale-95"
               aria-label="Next Image"
             >
               <ChevronRight className="w-6 h-6" />
@@ -83,12 +83,14 @@ export const Lightbox = ({ image, title, caption, category, onClose, onPrev, onN
 
         {/* Caption & Title Footer */}
         {(title || caption) && (
-          <div className="p-4 bg-[#171717] text-neutral-200 border-t border-neutral-800 space-y-1 text-center">
+          <div className="p-4 bg-[#0a1424] text-slate-200 border-t border-white/10 space-y-1 text-center">
             {title && <h3 className="font-heading font-bold text-base text-white">{title}</h3>}
-            {caption && <p className="text-xs text-neutral-400 max-w-3xl mx-auto">{caption}</p>}
+            {caption && <p className="text-xs text-slate-400 max-w-3xl mx-auto">{caption}</p>}
           </div>
         )}
       </div>
     </div>
   );
 };
+
+export default Lightbox;

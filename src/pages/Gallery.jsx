@@ -42,11 +42,12 @@ export const Gallery = () => {
         ]}
       />
 
-      <div className="space-y-12 pb-16 bg-[#faf9f7] min-h-screen text-[#404040]">
-        {/* Gallery Hero Banner */}
-        <section className="bg-gradient-to-r from-[#171717] via-[#262626] to-[#171717] text-white py-14 md:py-20 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-20">
-            <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#ef2028] rounded-full filter blur-[120px]" />
+      <div className="space-y-12 pb-16 bg-bg-soft min-h-screen text-text">
+        {/* Gallery Hero Banner with Kridha Gradient */}
+        <section className="bg-gradient-to-br from-[#0b2447] via-[#1578c9] to-[#0b5ea8] text-white py-14 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-25">
+            <div className="absolute top-0 right-1/4 w-80 h-80 bg-secondary rounded-full filter blur-[120px]" />
+            <div className="absolute bottom-0 left-10 w-72 h-72 bg-white rounded-full filter blur-[120px] opacity-15" />
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Breadcrumb current="Gallery" />
@@ -54,7 +55,7 @@ export const Gallery = () => {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
                 Clinic Gallery
               </h1>
-              <p className="text-base md:text-lg text-neutral-300 max-w-2xl font-normal leading-relaxed">
+              <p className="text-base md:text-lg text-white/90 max-w-2xl font-normal leading-relaxed">
                 Explore the clinic facilities, diagnostic equipment, certificates, and interior spaces of our Kota clinic.
               </p>
             </div>
@@ -63,9 +64,9 @@ export const Gallery = () => {
 
         {/* Category Filters */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none">
-            <span className="text-xs font-bold text-[#171717] uppercase tracking-wider flex items-center gap-1.5 mr-2 flex-shrink-0">
-              <Filter className="w-4 h-4 text-[#ef2028]" /> Filter:
+          <div className="flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none border-b border-border">
+            <span className="text-xs font-bold text-text uppercase tracking-wider flex items-center gap-1.5 mr-2 flex-shrink-0">
+              <Filter className="w-4 h-4 text-primary" /> Filter:
             </span>
             {galleryCategories.map((cat) => (
               <button
@@ -76,8 +77,8 @@ export const Gallery = () => {
                 }}
                 className={`text-xs font-bold px-4 py-2 rounded-xl transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                   selectedCategory === cat
-                    ? 'bg-[#ef2028] text-white shadow-[0_8px_25px_rgba(239,32,40,0.35)]'
-                    : 'bg-white text-neutral-700 border border-neutral-300 hover:border-[#ef2028] hover:text-[#ef2028]'
+                    ? 'bg-primary text-white shadow-blue-btn'
+                    : 'bg-white text-text border border-border shadow-sm hover:border-primary hover:text-primary'
                 }`}
               >
                 {cat}

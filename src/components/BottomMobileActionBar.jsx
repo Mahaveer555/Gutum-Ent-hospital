@@ -4,12 +4,12 @@ import { clinicData, getWhatsAppUrl } from '../data/clinic';
 
 export const BottomMobileActionBar = () => {
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-bordergrey shadow-2xl p-2.5 sm:hidden block">
+    <div className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-border shadow-2xl p-2.5 sm:hidden block">
       <div className="grid grid-cols-3 gap-2 max-w-md mx-auto">
         {/* Call Now */}
         <a
           href={`tel:${clinicData.rawPhone}`}
-          className="flex flex-col items-center justify-center min-h-[44px] py-1 px-1 rounded-xl bg-gradient-to-r from-medicalred to-medicalred-dark text-white font-bold text-xs gap-1 active:scale-95 transition-transform shadow-red-btn"
+          className="flex flex-col items-center justify-center min-h-[44px] py-1 px-1 rounded-xl bg-gradient-to-r from-primary to-primary-dark text-white font-bold text-xs gap-1 active:scale-95 transition-transform shadow-blue-btn"
         >
           <Phone className="w-4 h-4 animate-ring" />
           <span>Call Now</span>
@@ -20,9 +20,9 @@ export const BottomMobileActionBar = () => {
           href={getWhatsAppUrl("Hello Gautam ENT Clinic, I would like to request a consultation slot.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center min-h-[44px] py-1 px-1 rounded-xl bg-whatsappgreen text-white font-bold text-xs gap-1 active:scale-95 transition-transform shadow-sm"
+          className="flex flex-col items-center justify-center min-h-[44px] py-1 px-1 rounded-xl bg-[#25D366] text-white font-bold text-xs gap-1 active:scale-95 transition-transform shadow-sm"
         >
-          <MessageCircle className="w-4 h-4 fill-current" />
+          <MessageCircle className="w-4 h-4" />
           <span>WhatsApp</span>
         </a>
 
@@ -31,13 +31,14 @@ export const BottomMobileActionBar = () => {
           href={clinicData.directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center min-h-[44px] py-1 px-1 rounded-xl bg-softblue border border-bordergrey text-medicalnavy font-bold text-xs gap-1 active:scale-95 transition-transform"
+          className="flex flex-col items-center justify-center min-h-[44px] py-1 px-1 rounded-xl bg-bg-soft border border-border text-text font-bold text-xs gap-1 active:scale-95 transition-transform hover:border-primary/40"
         >
-          <Navigation className="w-4 h-4 text-medicalred" />
+          <Navigation className="w-4 h-4 text-primary" />
           <span>Directions</span>
         </a>
       </div>
     </div>
   );
 };
+
 export default BottomMobileActionBar;

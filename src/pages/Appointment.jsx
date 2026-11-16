@@ -32,15 +32,16 @@ export const Appointment = () => {
         ]}
       />
 
-      <div className="space-y-12 pb-16 bg-[#faf9f7] min-h-screen">
-        {/* Banner Header */}
-        <section className="bg-gradient-to-r from-[#171717] via-[#262626] to-[#171717] text-white py-12 md:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-20">
-            <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#ef2028] rounded-full filter blur-[120px]" />
+      <div className="space-y-12 pb-16 bg-bg-soft min-h-screen text-text">
+        {/* Banner Header with Kridha Gradient */}
+        <section className="bg-gradient-to-br from-[#0b2447] via-[#1578c9] to-[#0b5ea8] text-white py-12 md:py-16 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-25">
+            <div className="absolute top-0 right-1/4 w-80 h-80 bg-secondary rounded-full filter blur-[120px]" />
+            <div className="absolute bottom-0 left-10 w-72 h-72 bg-white rounded-full filter blur-[120px] opacity-15" />
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <nav className="flex items-center gap-2 text-xs md:text-sm text-neutral-300 mb-3">
-              <Link to="/" className="hover:text-rose-200 transition-colors">Home</Link>
+            <nav className="flex items-center gap-2 text-xs md:text-sm text-white/80 mb-3">
+              <Link to="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="w-3.5 h-3.5 opacity-60" />
               <span className="text-white font-semibold">Book Appointment</span>
             </nav>
@@ -48,7 +49,7 @@ export const Appointment = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
               Request an Appointment
             </h1>
-            <p className="mt-2 text-base md:text-lg text-neutral-300 max-w-2xl font-normal leading-relaxed">
+            <p className="mt-2 text-base md:text-lg text-white/90 max-w-2xl font-normal leading-relaxed">
               Fill out your details below to request a consultation slot at Gautam ENT Clinic in Kota.
             </p>
           </div>
@@ -62,22 +63,22 @@ export const Appointment = () => {
             <div className="lg:col-span-5 space-y-6">
               
               {/* Urgent Booking Call Action */}
-              <div className="bg-gradient-to-br from-[#171717] to-[#262626] text-white rounded-2xl p-6 shadow-xl border border-neutral-800 space-y-3">
+              <div className="bg-gradient-to-br from-[#0b2447] to-[#1578c9] text-white rounded-2xl p-6 shadow-hospital-lg border border-white/10 space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#ef2028] text-white flex items-center justify-center flex-shrink-0 shadow-md">
-                    <Phone className="w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center flex-shrink-0 shadow-md backdrop-blur-sm">
+                    <Phone className="w-5 h-5 text-secondary" />
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-lg text-white">Prefer to Book by Phone?</h3>
-                    <p className="text-xs text-neutral-300">Instant availability check over phone</p>
+                    <p className="text-xs text-sky-200">Instant availability check over phone</p>
                   </div>
                 </div>
-                <p className="text-xs text-neutral-300 leading-relaxed">
+                <p className="text-xs text-white/85 leading-relaxed">
                   Call our clinic desk directly to confirm today's consultation slot.
                 </p>
                 <a
                   href={`tel:${clinicData.rawPhone}`}
-                  className="w-full bg-[#ef2028] hover:bg-[#cf131b] text-white font-bold text-sm py-3 px-4 rounded-xl shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all inline-flex items-center justify-center gap-2"
+                  className="w-full bg-secondary hover:bg-teal-600 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-teal-btn transition-all inline-flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call {clinicData.phone}</span>
@@ -85,34 +86,34 @@ export const Appointment = () => {
               </div>
 
               {/* Appointment Benefits */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200 space-y-4">
-                <h3 className="font-heading font-bold text-lg text-[#171717] flex items-center gap-2">
-                  <CalendarCheck className="w-5 h-5 text-[#ef2028]" />
+              <div className="bg-white rounded-2xl p-6 shadow-hospital border border-border space-y-4">
+                <h3 className="font-heading font-bold text-lg text-text flex items-center gap-2">
+                  <CalendarCheck className="w-5 h-5 text-primary" />
                   Consultation Benefits
                 </h3>
-                <ul className="space-y-3 text-xs md:text-sm text-neutral-700">
+                <ul className="space-y-3 text-xs md:text-sm text-text">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
                     <span>Patient-focused evaluation without rushed appointments.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
                     <span>Care for both adult and pediatric ear, nose &amp; throat concerns.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
                     <span>Convenient Kota location with clear driving directions.</span>
                   </li>
                 </ul>
               </div>
 
               {/* What to Bring */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200 space-y-3">
-                <h3 className="font-heading font-bold text-base text-[#171717] flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-[#ef2028]" />
+              <div className="bg-white rounded-2xl p-6 shadow-hospital border border-border space-y-3">
+                <h3 className="font-heading font-bold text-base text-text flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-primary" />
                   What to Bring to Your Visit
                 </h3>
-                <ul className="space-y-2 text-xs md:text-sm text-neutral-600 list-disc list-inside">
+                <ul className="space-y-2 text-xs md:text-sm text-text-muted list-disc list-inside">
                   <li>Any past ear/nose medical prescriptions or scan reports.</li>
                   <li>List of current medications you are taking.</li>
                   <li>Photo ID for patient record registration.</li>
@@ -120,20 +121,20 @@ export const Appointment = () => {
               </div>
 
               {/* Location & Timings */}
-              <div className="bg-[#f7f6f3] p-5 rounded-2xl border border-neutral-200 space-y-3 text-xs md:text-sm text-neutral-700">
+              <div className="bg-white p-5 rounded-2xl border border-border shadow-hospital space-y-3 text-xs md:text-sm text-text">
                 <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#ef2028] flex-shrink-0 mt-1" />
+                  <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <strong className="text-[#171717]">Clinic Address:</strong><br />
-                    {clinicData.address}
+                    <strong className="text-text font-bold">Clinic Address:</strong><br />
+                    <span className="text-text-muted">{clinicData.address}</span>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2.5 pt-2 border-t border-neutral-300">
-                  <Clock className="w-4 h-4 text-[#ef2028] flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-2.5 pt-2 border-t border-border">
+                  <Clock className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <strong className="text-[#171717]">Clinic Availability:</strong><br />
-                    {clinicData.openingHoursNotice}
+                    <strong className="text-text font-bold">Clinic Availability:</strong><br />
+                    <span className="text-text-muted">{clinicData.openingHoursNotice}</span>
                   </div>
                 </div>
               </div>
@@ -149,3 +150,5 @@ export const Appointment = () => {
     </>
   );
 };
+
+export default Appointment;

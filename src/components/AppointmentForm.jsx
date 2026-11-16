@@ -27,7 +27,7 @@ export const AppointmentForm = ({ prefilledData = null }) => {
       patientType: 'Adult',
       concern: prefilledData?.concern || SERVICES_LIST[0].title,
       preferredDate: prefilledData?.preferredDate || todayStr,
-      preferredTime: 'Morning',
+      preferredTime: 'Evening (5:00 PM - 6:00 PM)',
       visitType: 'First Visit',
       message: '',
       consent: true,
@@ -63,38 +63,38 @@ export const AppointmentForm = ({ prefilledData = null }) => {
 
   if (successData) {
     return (
-      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-200 text-center animate-fadeIn">
+      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-hospital border border-border text-center animate-fadeIn">
         <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-200">
           <CheckCircle className="w-10 h-10" />
         </div>
         
-        <h3 className="text-2xl font-heading font-extrabold text-[#171717]">Request Submitted</h3>
-        <p className="text-sm font-semibold text-[#ef2028] mt-1">
-          Request ID: <span className="font-mono bg-[#ef2028]/10 text-[#ef2028] px-2 py-0.5 rounded border border-[#ef2028]/20">{successData.requestId}</span>
+        <h3 className="text-2xl font-heading font-extrabold text-text">Request Submitted</h3>
+        <p className="text-sm font-semibold text-primary mt-1">
+          Request ID: <span className="font-mono bg-primary/10 text-primary px-2.5 py-0.5 rounded border border-primary/20">{successData.requestId}</span>
         </p>
 
-        <div className="bg-[#faf9f7] border-l-4 border-[#ef2028] p-4 rounded-r-xl text-left my-6 space-y-2 text-sm text-neutral-700">
+        <div className="bg-bg-soft border-l-4 border-primary p-4 rounded-r-xl text-left my-6 space-y-2 text-sm text-text">
           <p><strong>Patient Name:</strong> {successData.patientName}</p>
           <p><strong>Phone:</strong> {successData.phone}</p>
           <p><strong>Preferred Date:</strong> {successData.preferredDate}</p>
           <p><strong>Status:</strong> <span className="text-amber-600 font-semibold">{successData.status}</span></p>
         </div>
 
-        <p className="text-sm text-neutral-600 mb-6 leading-relaxed">
+        <p className="text-sm text-text-light mb-6 leading-relaxed">
           Your appointment request has been submitted. The clinic staff will contact you shortly to confirm exact time availability.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={() => setSuccessData(null)}
-            className="bg-neutral-100 hover:bg-neutral-200 text-[#171717] font-bold text-sm px-6 py-3 rounded-xl transition-all"
+            className="bg-bg-soft hover:bg-slate-200 text-text font-bold text-sm px-6 py-3 rounded-xl transition-all border border-border"
           >
             Submit Another Request
           </button>
 
           <a
             href={`tel:${clinicData.rawPhone}`}
-            className="bg-[#ef2028] hover:bg-[#cf131b] text-white font-bold text-sm px-6 py-3 rounded-xl shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all inline-flex items-center justify-center gap-2"
+            className="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-bold text-sm px-6 py-3 rounded-xl shadow-blue-btn transition-all inline-flex items-center justify-center gap-2"
           >
             <Phone className="w-4 h-4" />
             <span>Call Clinic Now</span>
@@ -105,12 +105,12 @@ export const AppointmentForm = ({ prefilledData = null }) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-200">
+    <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-hospital border border-border">
       <div className="mb-6">
-        <h3 className="text-2xl font-heading font-extrabold text-[#171717]">
+        <h3 className="text-2xl font-heading font-extrabold text-text">
           Book an Appointment Consultation
         </h3>
-        <p className="text-sm text-neutral-600 mt-1">
+        <p className="text-sm text-text-light mt-1">
           Complete the form below to request your preferred consultation date at Gautam ENT Clinic in Kota.
         </p>
       </div>
@@ -119,8 +119,8 @@ export const AppointmentForm = ({ prefilledData = null }) => {
         
         {/* Patient Name */}
         <div>
-          <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-            Full Patient Name <span className="text-[#ef2028]">*</span>
+          <label className="block text-xs font-bold text-text uppercase mb-1">
+            Full Patient Name <span className="text-primary">*</span>
           </label>
           <input
             type="text"
@@ -130,7 +130,7 @@ export const AppointmentForm = ({ prefilledData = null }) => {
               minLength: { value: 2, message: 'Name must be at least 2 characters' },
             })}
             className={`w-full text-sm rounded-xl px-4 py-3 border ${
-              errors.patientName ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
+              errors.patientName ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
             } focus:outline-none transition-colors`}
           />
           {errors.patientName && (
@@ -144,8 +144,8 @@ export const AppointmentForm = ({ prefilledData = null }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Phone */}
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-              Phone Number <span className="text-[#ef2028]">*</span>
+            <label className="block text-xs font-bold text-text uppercase mb-1">
+              Phone Number <span className="text-primary">*</span>
             </label>
             <input
               type="tel"
@@ -158,7 +158,7 @@ export const AppointmentForm = ({ prefilledData = null }) => {
                 },
               })}
               className={`w-full text-sm rounded-xl px-4 py-3 border ${
-                errors.phone ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
+                errors.phone ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
               } focus:outline-none transition-colors`}
             />
             {errors.phone && (
@@ -170,8 +170,8 @@ export const AppointmentForm = ({ prefilledData = null }) => {
 
           {/* Email */}
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-              Email Address <span className="text-neutral-400 font-normal">(Optional)</span>
+            <label className="block text-xs font-bold text-text uppercase mb-1">
+              Email Address <span className="text-text-light font-normal">(Optional)</span>
             </label>
             <input
               type="email"
@@ -182,7 +182,7 @@ export const AppointmentForm = ({ prefilledData = null }) => {
                   message: 'Enter a valid email address',
                 },
               })}
-              className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none transition-colors"
+              className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors"
             />
             {errors.email && (
               <p className="text-xs text-red-500 mt-1 flex items-center gap-1">
@@ -195,12 +195,12 @@ export const AppointmentForm = ({ prefilledData = null }) => {
         {/* Patient Type & Age */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+            <label className="block text-xs font-bold text-text uppercase mb-1">
               Patient Type
             </label>
             <select
               {...register('patientType')}
-              className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none bg-white cursor-pointer"
+              className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-white cursor-pointer"
             >
               <option value="Adult">Adult Patient</option>
               <option value="Child">Child Patient (Pediatric)</option>
@@ -208,8 +208,8 @@ export const AppointmentForm = ({ prefilledData = null }) => {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-              Age <span className="text-neutral-400 font-normal">(Optional)</span>
+            <label className="block text-xs font-bold text-text uppercase mb-1">
+              Age <span className="text-text-light font-normal">(Optional)</span>
             </label>
             <input
               type="number"
@@ -217,20 +217,20 @@ export const AppointmentForm = ({ prefilledData = null }) => {
               max="120"
               placeholder="e.g. 35"
               {...register('age')}
-              className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none transition-colors"
+              className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors"
             />
           </div>
         </div>
 
         {/* ENT Concern Selection */}
         <div>
-          <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-            Primary ENT Concern <span className="text-[#ef2028]">*</span>
+          <label className="block text-xs font-bold text-text uppercase mb-1">
+            Primary ENT Concern <span className="text-primary">*</span>
           </label>
           <select
             {...register('concern', { required: 'Please select your ENT concern' })}
             className={`w-full text-sm rounded-xl px-4 py-3 border ${
-              errors.concern ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
+              errors.concern ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
             } focus:outline-none bg-white cursor-pointer`}
           >
             {SERVICES_LIST.map((service) => (
@@ -249,15 +249,15 @@ export const AppointmentForm = ({ prefilledData = null }) => {
         {/* Preferred Date & Time */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-              Preferred Date <span className="text-[#ef2028]">*</span>
+            <label className="block text-xs font-bold text-text uppercase mb-1">
+              Preferred Date <span className="text-primary">*</span>
             </label>
             <input
               type="date"
               min={todayStr}
               {...register('preferredDate', { required: 'Preferred date is required' })}
               className={`w-full text-sm rounded-xl px-4 py-3 border ${
-                errors.preferredDate ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
+                errors.preferredDate ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
               } focus:outline-none transition-colors`}
             />
             {errors.preferredDate && (
@@ -268,12 +268,12 @@ export const AppointmentForm = ({ prefilledData = null }) => {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+            <label className="block text-xs font-bold text-text uppercase mb-1">
               Preferred Time Slot
             </label>
             <select
               {...register('preferredTime')}
-              className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none bg-white cursor-pointer"
+              className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-white cursor-pointer"
             >
               <option value="Evening (5:00 PM - 6:00 PM)">Evening (5:00 PM - 6:00 PM)</option>
               <option value="Evening (6:00 PM - 7:00 PM)">Evening (6:00 PM - 7:00 PM)</option>
@@ -282,12 +282,12 @@ export const AppointmentForm = ({ prefilledData = null }) => {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
+            <label className="block text-xs font-bold text-text uppercase mb-1">
               Visit Type
             </label>
             <select
               {...register('visitType')}
-              className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none bg-white cursor-pointer"
+              className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-white cursor-pointer"
             >
               <option value="First Visit">First Consultation</option>
               <option value="Follow-up">Follow-up Visit</option>
@@ -297,14 +297,14 @@ export const AppointmentForm = ({ prefilledData = null }) => {
 
         {/* Short Message */}
         <div>
-          <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-            Short Description of Symptoms <span className="text-neutral-400 font-normal">(Optional)</span>
+          <label className="block text-xs font-bold text-text uppercase mb-1">
+            Short Description of Symptoms <span className="text-text-light font-normal">(Optional)</span>
           </label>
           <textarea
             rows="3"
             placeholder="Briefly describe your symptoms or ear, nose, or throat concern..."
             {...register('message')}
-            className="w-full text-sm rounded-xl px-4 py-3 border border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028] focus:outline-none transition-colors resize-none"
+            className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors resize-none"
           ></textarea>
         </div>
 
@@ -316,9 +316,9 @@ export const AppointmentForm = ({ prefilledData = null }) => {
               {...register('consent', {
                 required: 'You must consent to be contacted regarding your request',
               })}
-              className="mt-1 w-4 h-4 rounded text-[#ef2028] focus:ring-[#ef2028] border-neutral-300"
+              className="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-border"
             />
-            <span className="text-xs text-neutral-600 leading-relaxed">
+            <span className="text-xs text-text-light leading-relaxed">
               I consent to Gautam ENT Clinic contacting me via phone or SMS regarding this appointment enquiry. My details are handled in accordance with the clinic's privacy policy.
             </span>
           </label>
@@ -329,12 +329,12 @@ export const AppointmentForm = ({ prefilledData = null }) => {
           )}
         </div>
 
-        {/* Submit CTA Button */}
+        {/* Submit CTA Button (Kridha Blue Button Style) */}
         <div className="pt-4">
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#ef2028] hover:bg-[#cf131b] disabled:bg-neutral-400 text-white font-bold text-base py-4 rounded-xl shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary disabled:opacity-50 text-white font-bold text-base py-4 rounded-xl shadow-blue-btn hover:shadow-lg transition-all flex items-center justify-center gap-2"
           >
             {loading ? (
               <>
@@ -350,11 +350,13 @@ export const AppointmentForm = ({ prefilledData = null }) => {
           </button>
         </div>
 
-        <p className="text-xs text-center text-neutral-500 pt-2 flex items-center justify-center gap-1">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+        <p className="text-xs text-center text-text-light pt-2 flex items-center justify-center gap-1">
+          <ShieldCheck className="w-3.5 h-3.5 text-secondary" />
           Your patient privacy is strictly respected. Request subject to clinic slot confirmation.
         </p>
       </form>
     </div>
   );
 };
+
+export default AppointmentForm;

@@ -62,18 +62,19 @@ I would like to request an appointment.`;
         ]}
       />
 
-      <div className="space-y-16 pb-16 bg-[#faf9f7] min-h-screen text-[#404040]">
-        {/* Contact Hero Banner */}
-        <section className="bg-gradient-to-r from-[#171717] via-[#262626] to-[#171717] text-white py-14 md:py-20 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-20">
-            <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#ef2028] rounded-full filter blur-[120px]" />
+      <div className="space-y-16 pb-16 bg-bg-soft min-h-screen text-text">
+        {/* Contact Hero Banner with Kridha Gradient */}
+        <section className="bg-gradient-to-br from-[#0b2447] via-[#1578c9] to-[#0b5ea8] text-white py-14 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-25">
+            <div className="absolute top-0 right-1/4 w-80 h-80 bg-secondary rounded-full filter blur-[120px]" />
+            <div className="absolute bottom-0 left-10 w-72 h-72 bg-white rounded-full filter blur-[120px] opacity-15" />
           </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <Breadcrumb current="Contact" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight mt-3">
               Contact Gautam ENT Clinic
             </h1>
-            <p className="mt-3 text-base md:text-lg text-rose-100 max-w-2xl font-normal leading-relaxed">
+            <p className="mt-3 text-base md:text-lg text-white/90 max-w-2xl font-normal leading-relaxed">
               Call or send a WhatsApp message to enquire about clinic availability in Kota.
             </p>
           </div>
@@ -83,27 +84,27 @@ I would like to request an appointment.`;
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Phone Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200 hover:border-[#ef2028]/40 hover:shadow-md transition-all space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#ef2028]/10 text-[#ef2028] flex items-center justify-center border border-[#ef2028]/20">
+            <div className="bg-white rounded-2xl p-6 shadow-hospital border border-border hover:border-primary/50 hover:shadow-hospital-lg transition-all space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
                 <Phone className="w-6 h-6 animate-ring" />
               </div>
-              <h3 className="font-heading font-bold text-base text-[#171717]">Call Desk</h3>
-              <p className="text-sm font-semibold text-[#171717]">{clinicData.phone}</p>
+              <h3 className="font-heading font-bold text-base text-text">Call Desk</h3>
+              <p className="text-sm font-semibold text-text">{clinicData.phone}</p>
               <a
                 href={`tel:${clinicData.rawPhone}`}
-                className="text-xs font-bold text-[#ef2028] hover:underline inline-block"
+                className="text-xs font-bold text-primary hover:underline inline-block"
               >
                 Call Now →
               </a>
             </div>
 
             {/* WhatsApp Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200 hover:border-[#ef2028]/40 hover:shadow-md transition-all space-y-3">
+            <div className="bg-white rounded-2xl p-6 shadow-hospital border border-border hover:border-emerald-300 hover:shadow-hospital-lg transition-all space-y-3">
               <div className="w-12 h-12 rounded-xl bg-emerald-50 text-[#25D366] flex items-center justify-center border border-emerald-200">
                 <MessageCircle className="w-6 h-6 animate-slow-pulse" />
               </div>
-              <h3 className="font-heading font-bold text-base text-[#171717]">WhatsApp Chat</h3>
-              <p className="text-sm text-neutral-600">Fast appointment message</p>
+              <h3 className="font-heading font-bold text-base text-text">WhatsApp Chat</h3>
+              <p className="text-sm text-text-muted">Fast appointment message</p>
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
@@ -115,29 +116,29 @@ I would like to request an appointment.`;
             </div>
 
             {/* Address Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200 hover:border-[#ef2028]/40 hover:shadow-md transition-all space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-[#ef2028]/10 text-[#ef2028] flex items-center justify-center border border-[#ef2028]/20">
+            <div className="bg-white rounded-2xl p-6 shadow-hospital border border-border hover:border-primary/50 hover:shadow-hospital-lg transition-all space-y-3">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
                 <MapPin className="w-6 h-6" />
               </div>
-              <h3 className="font-heading font-bold text-base text-[#171717]">Clinic Address</h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">{clinicData.address}</p>
+              <h3 className="font-heading font-bold text-base text-text">Clinic Address</h3>
+              <p className="text-xs text-text-muted leading-relaxed">{clinicData.address}</p>
               <a
                 href={clinicData.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-bold text-[#ef2028] hover:underline inline-block"
+                className="text-xs font-bold text-primary hover:underline inline-block"
               >
                 Get Directions →
               </a>
             </div>
 
             {/* Timings Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-neutral-200 hover:border-[#ef2028]/40 hover:shadow-md transition-all space-y-3">
+            <div className="bg-white rounded-2xl p-6 shadow-hospital border border-border hover:border-amber-300 hover:shadow-hospital-lg transition-all space-y-3">
               <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-200">
                 <Clock className="w-6 h-6" />
               </div>
-              <h3 className="font-heading font-bold text-base text-[#171717]">Clinic Timings</h3>
-              <p className="text-xs text-neutral-600 leading-relaxed">{clinicData.openingHoursNotice}</p>
+              <h3 className="font-heading font-bold text-base text-text">Clinic Timings</h3>
+              <p className="text-xs text-text-muted leading-relaxed">{clinicData.openingHoursNotice}</p>
               <span className="text-xs font-semibold text-amber-700 block">Call to confirm today</span>
             </div>
           </div>
@@ -148,12 +149,12 @@ I would like to request an appointment.`;
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             
             {/* Frontend-only WhatsApp Form (6 Cols) */}
-            <div className="lg:col-span-6 bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-200 space-y-6">
+            <div className="lg:col-span-6 bg-white rounded-2xl p-6 md:p-8 shadow-hospital border border-border space-y-6">
               <div>
-                <h3 className="text-2xl font-heading font-extrabold text-[#171717]">
+                <h3 className="text-2xl font-heading font-extrabold text-text">
                   Request Appointment via WhatsApp
                 </h3>
-                <p className="text-xs md:text-sm text-neutral-600 mt-1">
+                <p className="text-xs md:text-sm text-text-muted mt-1">
                   Fill in your details below. Submitting this form will generate a formatted message and open WhatsApp.
                 </p>
               </div>
@@ -161,8 +162,8 @@ I would like to request an appointment.`;
               <form onSubmit={handleSubmit(onSubmitWhatsApp)} className="space-y-4" noValidate>
                 {/* Full Name */}
                 <div>
-                  <label className="block text-xs font-bold text-[#171717] uppercase mb-1">
-                    Full Name <span className="text-[#ef2028]">*</span>
+                  <label className="block text-xs font-bold text-text uppercase mb-1">
+                    Full Name <span className="text-primary">*</span>
                   </label>
                   <input
                     type="text"
@@ -172,7 +173,7 @@ I would like to request an appointment.`;
                       minLength: { value: 2, message: 'Name must be at least 2 characters' },
                     })}
                     className={`w-full text-sm rounded-xl px-4 py-3 border ${
-                      errors.patientName ? 'border-red-500 bg-red-50/20' : 'border-neutral-300 focus:border-[#ef2028] focus:ring-1 focus:ring-[#ef2028]'
+                      errors.patientName ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
                     } focus:outline-none transition-colors`}
                   />
                   {errors.patientName && (
@@ -184,8 +185,8 @@ I would like to request an appointment.`;
 
                 {/* Mobile Number */}
                 <div>
-                  <label className="block text-xs font-bold text-darkheading uppercase mb-1">
-                    Mobile Number <span className="text-medicalred">*</span>
+                  <label className="block text-xs font-bold text-text uppercase mb-1">
+                    Mobile Number <span className="text-primary">*</span>
                   </label>
                   <input
                     type="tel"
@@ -198,7 +199,7 @@ I would like to request an appointment.`;
                       },
                     })}
                     className={`w-full text-sm rounded-xl px-4 py-3 border ${
-                      errors.phone ? 'border-red-500 bg-red-50/20' : 'border-roseborder focus:border-medicalred'
+                      errors.phone ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
                     } focus:outline-none transition-colors`}
                   />
                   {errors.phone && (
@@ -210,12 +211,12 @@ I would like to request an appointment.`;
 
                 {/* Select ENT Concern */}
                 <div>
-                  <label className="block text-xs font-bold text-darkheading uppercase mb-1">
-                    Select ENT Concern <span className="text-medicalred">*</span>
+                  <label className="block text-xs font-bold text-text uppercase mb-1">
+                    Select ENT Concern <span className="text-primary">*</span>
                   </label>
                   <select
                     {...register('concern')}
-                    className="w-full text-sm rounded-xl px-4 py-3 border border-roseborder focus:border-medicalred focus:outline-none bg-white cursor-pointer"
+                    className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-white cursor-pointer"
                   >
                     {servicesData.map((s) => (
                       <option key={s.id} value={s.title}>
@@ -227,15 +228,15 @@ I would like to request an appointment.`;
 
                 {/* Preferred Date */}
                 <div>
-                  <label className="block text-xs font-bold text-darkheading uppercase mb-1">
-                    Preferred Date <span className="text-medicalred">*</span>
+                  <label className="block text-xs font-bold text-text uppercase mb-1">
+                    Preferred Date <span className="text-primary">*</span>
                   </label>
                   <input
                     type="date"
                     min={todayStr}
                     {...register('preferredDate', { required: 'Preferred date is required' })}
                     className={`w-full text-sm rounded-xl px-4 py-3 border ${
-                      errors.preferredDate ? 'border-red-500 bg-red-50/20' : 'border-roseborder focus:border-medicalred'
+                      errors.preferredDate ? 'border-red-500 bg-red-50/20' : 'border-border focus:border-primary focus:ring-1 focus:ring-primary'
                     } focus:outline-none transition-colors`}
                   />
                   {errors.preferredDate && (
@@ -247,14 +248,14 @@ I would like to request an appointment.`;
 
                 {/* Message */}
                 <div>
-                  <label className="block text-xs font-bold text-darkheading uppercase mb-1">
-                    Message / Symptoms <span className="text-slate-400 font-normal">(Optional)</span>
+                  <label className="block text-xs font-bold text-text uppercase mb-1">
+                    Message / Symptoms <span className="text-text-muted font-normal">(Optional)</span>
                   </label>
                   <textarea
                     rows="3"
                     placeholder="Briefly describe your symptoms or ear, nose, or throat concern..."
                     {...register('message')}
-                    className="w-full text-sm rounded-xl px-4 py-3 border border-roseborder focus:border-medicalred focus:outline-none transition-colors resize-none"
+                    className="w-full text-sm rounded-xl px-4 py-3 border border-border focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-colors resize-none"
                   ></textarea>
                 </div>
 
@@ -267,7 +268,7 @@ I would like to request an appointment.`;
                   <span>Send Appointment Request via WhatsApp</span>
                 </button>
 
-                <p className="text-[11px] text-center text-bodytext pt-1 leading-relaxed">
+                <p className="text-[11px] text-center text-text-muted pt-1 leading-relaxed">
                   Submitting this form will open WhatsApp. Appointment is confirmed only after the clinic responds.
                 </p>
               </form>
@@ -276,22 +277,22 @@ I would like to request an appointment.`;
             {/* Google Map & Directions Column (6 Cols) */}
             <div className="lg:col-span-6 space-y-6">
               <div>
-                <h3 className="text-2xl font-heading font-extrabold text-darkheading mb-2">
+                <h3 className="text-2xl font-heading font-extrabold text-text mb-2">
                   Google Map Location
                 </h3>
-                <p className="text-sm text-bodytext">
+                <p className="text-sm text-text-muted">
                   Gautam ENT Clinic is located at Shreenath Puram A, Shrinath Puram, Kota, Rajasthan 324010.
                 </p>
               </div>
 
-              {/* Embedded Google Map inside Rounded Red-Bordered Container */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral-200 relative">
-                <div className="bg-[#171717] text-white p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              {/* Embedded Google Map */}
+              <div className="bg-white rounded-2xl overflow-hidden shadow-hospital border border-border relative">
+                <div className="bg-gradient-to-r from-[#0b2447] to-[#1578c9] text-white p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                   <div className="flex items-center gap-3">
-                    <MapPin className="w-5 h-5 text-[#ef2028]" />
+                    <MapPin className="w-5 h-5 text-secondary" />
                     <div>
                       <h4 className="font-heading font-bold text-sm text-white">Gautam ENT Clinic Location</h4>
-                      <p className="text-xs text-neutral-400">Shreenath Puram, Kota</p>
+                      <p className="text-xs text-sky-200">Shreenath Puram, Kota</p>
                     </div>
                   </div>
 
@@ -299,7 +300,7 @@ I would like to request an appointment.`;
                     href={clinicData.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 bg-[#ef2028] text-white hover:bg-[#cf131b] font-bold text-xs px-3.5 py-2 rounded-xl transition-all shadow-[0_8px_25px_rgba(239,32,40,0.35)]"
+                    className="inline-flex items-center gap-1 bg-white text-primary hover:bg-sky-50 font-bold text-xs px-3.5 py-2 rounded-xl transition-all shadow-sm"
                   >
                     <Navigation className="w-3.5 h-3.5" />
                     <span>Get Directions</span>
@@ -326,7 +327,7 @@ I would like to request an appointment.`;
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <a
                   href={`tel:${clinicData.rawPhone}`}
-                  className="bg-[#ef2028] hover:bg-[#cf131b] text-white p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-[0_8px_25px_rgba(239,32,40,0.35)] transition-all"
+                  className="bg-primary hover:bg-primary-dark text-white p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-blue-btn transition-all"
                 >
                   <Phone className="w-4 h-4 animate-ring" /> Call Now
                 </a>
@@ -344,7 +345,7 @@ I would like to request an appointment.`;
                   href={clinicData.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-neutral-800 border border-neutral-300 p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-sm hover:border-[#ef2028] hover:text-[#ef2028] transition-all"
+                  className="bg-white text-text border border-border p-3.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-sm hover:border-primary hover:text-primary transition-all"
                 >
                   <Navigation className="w-4 h-4" /> Get Directions
                 </a>
@@ -367,3 +368,5 @@ I would like to request an appointment.`;
     </>
   );
 };
+
+export default Contact;

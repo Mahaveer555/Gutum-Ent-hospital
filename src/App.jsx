@@ -23,7 +23,7 @@ const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m
 
 export function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-soft text-darktext relative">
+    <div className="min-h-screen flex flex-col bg-bg-soft text-text relative font-sans">
       <ScrollToTop />
       <Toaster position="top-right" richColors />
 

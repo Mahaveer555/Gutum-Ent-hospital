@@ -31,7 +31,7 @@ import { doctorsData } from '../data/doctors';
 export const About = () => {
   const doctor = doctorsData[0]; // Dr. Pragyanand Gautam (MBBS, M.S. ENT)
 
-  // 4 Clinical Philosophy Cards (No unsupported claims)
+  // 4 Clinical Philosophy Cards
   const philosophyCards = [
     {
       title: "Clear Consultation",
@@ -55,7 +55,7 @@ export const About = () => {
     }
   ];
 
-  // 4 Unique Facilities Cards
+  // 4 Facilities Cards
   const facilitiesCards = [
     {
       id: "fac-1",
@@ -104,12 +104,14 @@ export const About = () => {
         ]}
       />
 
-      <div className="space-y-12 md:space-y-16 pb-16 bg-[#faf9f7] text-[#404040] font-sans">
+      <div className="space-y-12 md:space-y-16 pb-16 bg-bg-soft text-text font-sans">
         
-        {/* SECTION 1: Premium About Hero */}
-        <section className="relative w-full bg-gradient-to-b from-[#171717] via-[#262626] to-[#171717] text-white py-14 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-20">
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#ef2028] rounded-full filter blur-[140px]" />
+        {/* SECTION 1: Kridha Hospital Style Hero */}
+        <section className="relative w-full bg-gradient-to-br from-[#0b2447] via-[#1578c9] to-[#0b5ea8] text-white py-14 md:py-20 overflow-hidden">
+          {/* Ambient glow effects */}
+          <div className="absolute inset-0 pointer-events-none opacity-25">
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-secondary rounded-full filter blur-[140px]" />
+            <div className="absolute bottom-0 left-10 w-80 h-80 bg-white rounded-full filter blur-[130px] opacity-15" />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -117,19 +119,19 @@ export const About = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-6">
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-rose-300">
-                  <Building2 className="w-3.5 h-3.5 text-[#ef2028]" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-semibold text-white">
+                  <Building2 className="w-3.5 h-3.5 text-secondary" />
                   <span>Established ENT Care • Kota, Rajasthan</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
                   Thoughtful ENT Care, <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-200 via-white to-rose-100">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-white to-teal-200">
                     Built Around You.
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed font-normal">
+                <p className="text-base sm:text-lg text-white/90 max-w-2xl leading-relaxed font-normal">
                   Gautam Ear Nose Throat Clinic provides specialized medical consultations and thorough diagnostic evaluations for ear, nose, throat, voice, and sinus health in Shrinathpuram-A, Kota.
                 </p>
 
@@ -141,22 +143,22 @@ export const About = () => {
                     className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg transition-all"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>Book Appointment on WhatsApp</span>
+                    <span>Book on WhatsApp</span>
                   </a>
 
                   <a
                     href={`tel:${clinicData.rawPhone}`}
                     className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-6 py-3.5 rounded-xl border border-white/20 backdrop-blur-sm transition-all"
                   >
-                    <Phone className="w-4 h-4 text-rose-300" />
+                    <Phone className="w-4 h-4 text-secondary" />
                     <span>Call +91 70145 61171</span>
                   </a>
                 </div>
               </div>
 
-              {/* Unique Hero Visual: Official Clinic Storefront */}
+              {/* Clinic Storefront Card */}
               <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-neutral-800 bg-neutral-950 aspect-[16/9] w-full flex items-center justify-center">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-white/10 backdrop-blur-md aspect-[16/9] w-full flex items-center justify-center">
                   <img
                     src="/images/clinic/clinic_storefront_main.jpg"
                     alt="Gautam Ear Nose Throat Clinic storefront and main entrance at Shrinathpuram-A, Kota"
@@ -175,41 +177,41 @@ export const About = () => {
             
             {/* Story Image: Reception & Waiting Room */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden shadow-sm border border-neutral-200 bg-[#171717]">
+              <div className="rounded-2xl overflow-hidden shadow-hospital border border-border bg-white p-2">
                 <img
                   src="/images/original-gallery/IMG_20260811_115827.jpg.jpeg"
                   alt="Gautam ENT Clinic reception counter and patient waiting lounge"
-                  className="w-full h-auto max-h-[30rem] object-contain object-center"
+                  className="w-full h-auto max-h-[30rem] object-contain object-center rounded-xl"
                   loading="lazy"
                 />
               </div>
             </div>
 
             {/* Story Content */}
-            <div className="lg:col-span-7 space-y-5 text-neutral-700">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/10 text-[#ef2028] border border-[#ef2028]/20 text-xs font-bold uppercase tracking-wider">
-                <Building2 className="w-3.5 h-3.5 text-[#ef2028]" />
+            <div className="lg:col-span-7 space-y-5 text-text">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider">
+                <Building2 className="w-3.5 h-3.5 text-primary" />
                 <span>Our Story &amp; Setting</span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-[#171717] tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-heading font-extrabold text-text tracking-tight leading-tight">
                 Dedicated ENT Consultations for Patients in Kota
               </h2>
 
-              <p className="text-base text-neutral-600 leading-relaxed font-normal">
+              <p className="text-base text-text-muted leading-relaxed font-normal">
                 Gautam Ear Nose Throat Clinic was founded to provide reliable, patient-centered ENT consultations in Kota, Rajasthan. Located at Shrinathpuram-A (opposite Agnishaman Kendra), the clinic offers specialized checkups for common earaches, hearing changes, sinus congestion, allergies, throat infections, and voice concerns.
               </p>
 
-              <p className="text-base text-neutral-600 leading-relaxed font-normal">
+              <p className="text-base text-text-muted leading-relaxed font-normal">
                 Our approach emphasizes detailed patient history, thorough physical examination, and objective diagnostic guidance using modern clinical instruments in a clean and organized clinical environment.
               </p>
 
-              <div className="bg-white p-5 rounded-2xl border border-neutral-200 shadow-sm space-y-3">
-                <h4 className="font-heading font-bold text-sm text-[#171717] flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <div className="bg-white p-5 rounded-2xl border border-border shadow-hospital space-y-3">
+                <h4 className="font-heading font-bold text-sm text-text flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-secondary" />
                   <span>Ethical Medical Guidelines</span>
                 </h4>
-                <p className="text-xs text-neutral-600 leading-relaxed">
+                <p className="text-xs text-text-muted leading-relaxed">
                   We maintain strict transparency in medical advice, ensuring every patient receives objective medical assessment without unnecessary procedures or exaggerated claims.
                 </p>
               </div>
@@ -232,20 +234,20 @@ export const About = () => {
               return (
                 <div 
                   key={idx}
-                  className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm hover:shadow-md hover:border-[#ef2028]/40 transition-all space-y-3 flex flex-col justify-between"
+                  className="bg-white rounded-2xl p-6 border border-border shadow-hospital hover:shadow-hospital-lg hover:border-primary/50 transition-all space-y-3 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
-                    <div className="w-12 h-12 rounded-xl bg-[#ef2028]/10 text-[#ef2028] flex items-center justify-center border border-[#ef2028]/20">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
                       <IconComp className="w-6 h-6" />
                     </div>
-                    <h3 className="font-heading font-bold text-lg text-[#171717]">
+                    <h3 className="font-heading font-bold text-lg text-text">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-neutral-600 leading-relaxed">
+                    <p className="text-xs text-text-muted leading-relaxed">
                       {card.desc}
                     </p>
                   </div>
-                  <span className="text-[11px] font-bold text-neutral-400 pt-2 border-t border-neutral-100 block">
+                  <span className="text-[11px] font-bold text-primary pt-2 border-t border-border block">
                     Pillar 0{idx + 1}
                   </span>
                 </div>
@@ -255,17 +257,17 @@ export const About = () => {
         </section>
 
         {/* SECTION 4: Modern Facilities */}
-        <section className="bg-[#171717] text-white py-14">
+        <section className="bg-gradient-to-br from-[#0b2447] via-[#0f3460] to-[#0b2447] text-white py-14">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/20 text-rose-300 border border-[#ef2028]/30 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-[#ef2028]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-secondary border border-white/20 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
+                <Sparkles className="w-3.5 h-3.5 text-secondary" />
                 Infrastructure &amp; Setup
               </span>
               <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight">
                 Modern Diagnostic Facilities
               </h2>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed">
                 Take a look at the actual clinical equipment, diagnostic tools, and facility spaces available at Gautam ENT Clinic Kota.
               </p>
             </div>
@@ -274,26 +276,26 @@ export const About = () => {
               {facilitiesCards.map((fac) => (
                 <div 
                   key={fac.id}
-                  className="bg-[#1f1f1f] rounded-2xl overflow-hidden border border-neutral-800 shadow-xl group hover:border-[#ef2028]/50 transition-all duration-300 flex flex-col"
+                  className="bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/15 shadow-xl group hover:border-secondary/60 hover:bg-white/15 transition-all duration-300 flex flex-col"
                 >
-                  <div className={`relative ${fac.aspectClass} w-full overflow-hidden bg-black`}>
+                  <div className={`relative ${fac.aspectClass} w-full overflow-hidden bg-black/40`}>
                     <img 
                       src={fac.src} 
                       alt={fac.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute top-3 left-3 bg-[#171717]/90 text-rose-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-[#ef2028]/30 flex items-center gap-1">
-                      <Camera className="w-3 h-3 text-[#ef2028]" />
+                    <div className="absolute top-3 left-3 bg-[#0b2447]/90 text-sky-200 text-[10px] font-bold px-2.5 py-1 rounded-md border border-white/20 flex items-center gap-1 backdrop-blur-sm">
+                      <Camera className="w-3 h-3 text-secondary" />
                       <span>{fac.category}</span>
                     </div>
                   </div>
                   <div className="p-4 space-y-1 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-heading font-bold text-sm text-white group-hover:text-rose-300 transition-colors">
+                      <h3 className="font-heading font-bold text-sm text-white group-hover:text-secondary transition-colors">
                         {fac.title}
                       </h3>
-                      <p className="text-xs text-neutral-400 leading-relaxed mt-1">
+                      <p className="text-xs text-white/70 leading-relaxed mt-1">
                         {fac.desc}
                       </p>
                     </div>
@@ -306,64 +308,64 @@ export const About = () => {
 
         {/* SECTION 5: Specialist Focus */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-neutral-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-hospital border border-border grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Visual: Real Doctor Office Photo */}
+            {/* Visual: Doctor Office Photo */}
             <div className="lg:col-span-5">
-              <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden shadow-xl border-4 border-neutral-100 bg-[#171717] aspect-[3/4] sm:h-[480px]">
+              <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden shadow-hospital-lg border-4 border-white bg-gradient-to-br from-[#0b2447] to-[#1578c9] aspect-[3/4] sm:h-[480px]">
                 <img
                   src="/images/dr-pragyanand-gautam.png"
                   alt="Dr. Pragyanand Gautam consultation and office"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f]/90 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-[#171717]/90 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/20 text-white shadow-xl">
-                  <h4 className="font-heading font-bold text-base sm:text-lg text-white drop-shadow-sm">Dr. Pragyanand Gautam</h4>
-                  <p className="text-xs text-rose-300 font-semibold mt-0.5">MBBS, M.S. (ENT)</p>
-                  <p className="text-[11px] text-neutral-400 font-medium mt-0.5">State Medical Council Registered</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b2447]/90 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-border text-text shadow-xl">
+                  <h4 className="font-heading font-bold text-base sm:text-lg text-text">Dr. Pragyanand Gautam</h4>
+                  <p className="text-xs text-primary font-bold mt-0.5">MBBS, M.S. (ENT)</p>
+                  <p className="text-[11px] text-text-muted font-medium mt-0.5">State Medical Council Registered</p>
                 </div>
               </div>
             </div>
 
             {/* Specialist Info */}
-            <div className="lg:col-span-7 space-y-5 text-neutral-700">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/10 text-[#ef2028] border border-[#ef2028]/20 text-xs font-bold uppercase tracking-wider">
-                <Stethoscope className="w-3.5 h-3.5 text-[#ef2028]" />
+            <div className="lg:col-span-7 space-y-5 text-text">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider">
+                <Stethoscope className="w-3.5 h-3.5 text-primary" />
                 <span>Specialist Focus</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-[#171717] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-text tracking-tight">
                 Dr. Pragyanand Gautam — MBBS, M.S. (ENT)
               </h2>
 
-              <p className="text-base text-neutral-600 leading-relaxed font-normal">
+              <p className="text-base text-text-muted leading-relaxed font-normal">
                 Dr. Pragyanand Gautam holds professional medical qualifications in Otolaryngology (MBBS, M.S. ENT) and is registered with the State Medical Council. He delivers dedicated clinical evaluations for common and persistent ear, nose, and throat concerns.
               </p>
 
-              <div className="bg-[#faf9f7] p-5 rounded-2xl border border-neutral-200 space-y-3">
-                <h4 className="font-heading font-bold text-sm text-[#171717] uppercase tracking-wider">
+              <div className="bg-bg-soft p-5 rounded-2xl border border-border space-y-3">
+                <h4 className="font-heading font-bold text-sm text-text uppercase tracking-wider">
                   Areas of ENT Consultation
                 </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-neutral-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-text">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Ear Pain &amp; Infection Evaluation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Hearing Assessment &amp; Tinnitus Guidance</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Sinusitis &amp; Nasal Allergy Care</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Throat, Tonsil &amp; Voice Evaluation</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#ef2028] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                     <span>Pediatric ENT Concerns</span>
                   </div>
                 </div>
@@ -387,47 +389,47 @@ export const About = () => {
 
         {/* SECTION 6: Visit the Clinic & Location Map */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-neutral-200 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-hospital border border-border grid grid-cols-1 lg:grid-cols-12 gap-8">
             
-            <div className="lg:col-span-5 space-y-6 text-neutral-700">
+            <div className="lg:col-span-5 space-y-6 text-text">
               <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ef2028]/10 text-[#ef2028] border border-[#ef2028]/20 text-xs font-bold uppercase tracking-wider mb-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#ef2028]" />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider mb-2">
+                  <MapPin className="w-3.5 h-3.5 text-primary" />
                   Clinic Address &amp; Directions
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-[#171717] tracking-tight">
+                <h2 className="text-2xl sm:text-3xl font-heading font-extrabold text-text tracking-tight">
                   Visit Gautam ENT Clinic
                 </h2>
               </div>
 
               <div className="space-y-4 text-sm">
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#faf9f7] border border-neutral-200">
-                  <MapPin className="w-5 h-5 text-[#ef2028] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-bg-soft border border-border">
+                  <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-[#171717] font-bold">Address</strong>
-                    <p className="text-neutral-600 mt-0.5">
+                    <strong className="block text-text font-bold">Address</strong>
+                    <p className="text-text-muted mt-0.5">
                       58, Shrinathpuram-A, Kota, Rajasthan 324010<br />
-                      <span className="text-xs text-[#ef2028] font-semibold">(Opposite Agnishaman Kendra / Near Falodi Mart)</span>
+                      <span className="text-xs text-primary font-semibold">(Opposite Agnishaman Kendra / Near Falodi Mart)</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#faf9f7] border border-neutral-200">
-                  <Phone className="w-5 h-5 text-[#ef2028] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-bg-soft border border-border">
+                  <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-[#171717] font-bold">Phone Number</strong>
-                    <a href={`tel:${clinicData.rawPhone}`} className="text-[#ef2028] font-bold hover:underline">
+                    <strong className="block text-text font-bold">Phone Number</strong>
+                    <a href={`tel:${clinicData.rawPhone}`} className="text-primary font-bold hover:underline">
                       +91 70145 61171
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-[#faf9f7] border border-neutral-200">
-                  <Clock className="w-5 h-5 text-[#ef2028] flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-bg-soft border border-border">
+                  <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-[#171717] font-bold">Consultation Timings</strong>
-                    <p className="text-neutral-700">Mon - Sat: 5:00 PM - 8:00 PM</p>
-                    <p className="text-xs text-rose-800 font-semibold mt-0.5">
+                    <strong className="block text-text font-bold">Consultation Timings</strong>
+                    <p className="text-text">Mon - Sat: 5:00 PM - 8:00 PM</p>
+                    <p className="text-xs text-primary font-semibold mt-0.5">
                       Please call +91 70145 61171 to confirm today's doctor consultation availability.
                     </p>
                   </div>
@@ -449,34 +451,38 @@ export const About = () => {
                   href={clinicData.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#171717] hover:bg-[#262626] text-white font-bold px-5 py-3 rounded-xl shadow-md transition-all text-xs sm:text-sm"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-5 py-3 rounded-xl shadow-blue-btn transition-all text-xs sm:text-sm"
                 >
-                  <Navigation className="w-4 h-4 text-rose-300" />
+                  <Navigation className="w-4 h-4 text-white" />
                   <span>Get Google Directions</span>
                 </a>
               </div>
             </div>
 
-            <div className="lg:col-span-7 h-80 lg:h-auto min-h-[320px] rounded-2xl overflow-hidden border border-neutral-300 shadow-md relative">
+            <div className="lg:col-span-7 h-80 lg:h-auto min-h-[320px] rounded-2xl overflow-hidden border border-border shadow-md relative">
               <GoogleMap height="100%" />
             </div>
 
           </div>
         </section>
 
-        {/* SECTION 7: Medical Disclaimer */}
+        {/* SECTION 7: Urgent Medical Notice (styled cleanly like user screenshot) */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 md:p-6 shadow-sm">
+          <div className="bg-red-50/70 border border-red-200/80 rounded-2xl p-5 md:p-6 shadow-sm">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                 <AlertTriangle className="w-5 h-5" />
               </div>
-              <div className="space-y-1">
-                <h4 className="font-heading font-bold text-amber-900 text-base">
-                  Medical Emergency Disclaimer
+              <div className="space-y-1.5">
+                <h4 className="font-heading font-bold text-red-700 text-base">
+                  Urgent Medical Notice
                 </h4>
-                <p className="text-xs sm:text-sm text-amber-800 leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
                   This website does not provide emergency medical care. For breathing difficulty, severe bleeding, sudden hearing loss, serious injury or another urgent medical condition, visit the nearest hospital or contact emergency services.
+                </p>
+                <p className="text-xs font-semibold text-red-700 flex items-center gap-1.5 pt-0.5">
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>For routine consultation booking, call clinic directly at <a href={`tel:${clinicData.rawPhone}`} className="underline font-bold">+91 70145 61171</a>.</span>
                 </p>
               </div>
             </div>
